@@ -1,3 +1,4 @@
+
 " –³–¼ƒŒƒWƒXƒ^‚É“ü‚éƒf[ƒ^‚ğA*ƒŒƒWƒXƒ^‚É‚à“ü‚ê‚éB
 :set clipboard+=unnamed
 
@@ -35,7 +36,7 @@ imap <C-Space> <C-x><C-o>
 nnoremap <Esc><Esc> :noh<CR>
 
 " Enter‚ÅA‰üs
-nnoremap  i
+"nnoremap  i
 
 " Y‚ÅA‚»‚ÌêŠ‚©‚çÅŒã‚Ü‚Å‚ğƒ„ƒ“ƒN
 nnoremap Y y$
