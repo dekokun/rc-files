@@ -36,7 +36,7 @@ imap <C-Space> <C-x><C-o>
 nnoremap <Esc><Esc> :noh<CR>
 
 " Enterで、改行
-"nnoremap  i
+"nnoremap  i
 
 " Yで、その場所から最後までをヤンク
 nnoremap Y y$
