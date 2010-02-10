@@ -1,0 +1,80 @@
+" set runtimepath=/home/shintaro/.vimperator
+" source! /home/shintaro/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+" retlet .vimperatorrc
+" for Vimperator 1.2pre
+
+
+" 基本設定
+"+----------------------------------------------------------------------------------------+
+" ブラウザのタイトル
+set titlestring=Firefox
+" メニューバーとツールバーを表示
+set guioptions=mr
+" 検索語のハイライト
+set hlsearch
+" ビープを鳴らさない
+set visualbell
+"ビジュアルレベルを無効化
+highlight Bell display:none;
+"HintのStyle
+hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
+"hi Hint font-family:monospace; font-size:10pt; line-height:1.1; color:black; background-color:#CCF; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0;
+"HintのStyle(focus時)
+" hi focusedHint z-index:5000; font-family:monospace; font-size:12px; color:ButtonText; background-color:ButtonShadow; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
+"補完設定
+set wildoptions=auto
+"タブオープンやオープンで何を表示するか
+set complete=ls
+" twitterとか開いたときにinput要素にfocusを奪われないようにする
+set focuscontent
+" !でcssの表示切り替え
+map <silent> ! :set invusermode<CR>
+" インサートモードの時に<C-i>でgvimを使って編集できる
+set editor='gvim.exe'
+
+
+" キーマップ設定
+"+----------------------------------------------------------------------------------------+
+"yで選択範囲をコピー
+"map y :echo 'Yank!'<CR>Y
+"コピー、貼り付け、切り取りをウインドウズライクに"
+map <C-c> <C-Insert>
+map <C-x> <C-Delete>
+inoremap <C-v> <C-v><C-v>
+
+"j/kの移動量を5倍に
+map j 5<C-e>
+map k 5<C-y>
+" 選択文字列のコピーを <C-c> に割り当て
+map <C-c> Y
+" 選択文字列のgoogle検索を <C-g> に割り当て
+map <C-g> YP
+
+" h/l や ← → でタブ移動
+map h <C-p>
+map l <C-n>
+
+" .vimperatorrcを再読み込み(:restartしなくてもいい)
+map <C-r> :mapc<CR>:cmapc<CR>:imapc<CR>:so ~/.vimperatorrc<CR>
+
+imap <C-f> <Right>
+imap <C-b> <Left>
+imap <C-n> <Down>
+imap <C-p> <Up>
+
+" Shift + ← → で現在のタブの位置変更
+map <S-Right> :tabmove! +1<CR>
+map <S-Left>  :tabmove! -1<CR>
+
+"<A-r>でFirefoxを再起動
+map <A-r> :restart<CR>
+"<A-h>でヘルプを表示
+map <A-h> :help<CR>
+
+"migemo_hint.js
+set hintmatching=custom
+
+echo ".vimperatorrc sourced"
+
