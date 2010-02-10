@@ -1,16 +1,16 @@
 let twitvim_login = "dekokun:16721672"
-" タブをスペースに変換
+" �^�u���X�y�[�X�ɕϊ�
 set expandtab
-" タブの画面上での幅
+" �^�u�̉�ʏ�ł̕�
 set ts=4
-" オートインデント時のタブ幅
+" �I�[�g�C���f���g���̃^�u��
 set shiftwidth=4
-"印刷するときに行番号を付与する
+"�������Ƃ��ɍs�ԍ���t�^����
 set printoptions=number:y
-" カラー設定:
+" �J���[�ݒ�:
 colorscheme torte
 
-"バックアップファイルフォルダ
+"�o�b�N�A�b�v�t�@�C���t�H���_
 
 set backup
 
