@@ -77,4 +77,3 @@ map <A-h> :help<CR>
 set hintmatching=custom
 
 echo ".vimperatorrc sourced"
-
