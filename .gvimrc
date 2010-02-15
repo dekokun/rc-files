@@ -1,4 +1,3 @@
-let twitvim_login = "dekokun:16721672"
 " タブをスペースに変換
 set expandtab
 " タブの画面上での幅

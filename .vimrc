@@ -97,7 +97,7 @@ nnoremap Y y$
 nnoremap yyy ggyG
 
 " 入力モード中に、Ctrl-f、Ctrl-b,Ctrl-n,Ctrl-pで前後上下に動けるように。
-inoremap  <Right>
+inoremap  <Right>
 inoremap  <Left>
 inoremap inoremap <Up>
 inoremap vi <Down>
@@ -109,3 +109,6 @@ nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 ""trailは行末スペース。
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
+
+"password file
+source ./.vimrc_secure
