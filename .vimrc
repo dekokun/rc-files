@@ -110,5 +110,8 @@ nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
+"バックアップ
+set backup
+
 "password file
-source ./.vimrc_secure
+source $HOME/.vimrc_local
