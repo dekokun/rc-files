@@ -14,6 +14,9 @@ set number
  " タブをスペースに変換する
 set expandtab
 
+"本物のステータスライン常に表示させておく
+set laststatus=2
+
  " ステータスラインになんやかや書き加える
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
@@ -74,8 +77,8 @@ if !has('gui_running') && !(has('win32') || has('win64'))
     autocmd MyAutoCmd BufWritePost $MYVIMRC nested source $MYVIMRC
 else
 " .vimrcの再読込時にも色が変化するようにする
-    autocmd MyAutoCmd BufWritePost $MYVIMRC source $MYVIMRC | 
-\if has('gui_running') | source $MYGVIMRC  
+    autocmd MyAutoCmd BufWritePost $MYVIMRC source $MYVIMRC |
+\if has('gui_running') | source $MYGVIMRC
     autocmd MyAutoCmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 endif
 
@@ -97,7 +100,7 @@ nnoremap Y y$
 nnoremap yyy ggyG
 
 " 入力モード中に、Ctrl-f、Ctrl-b,Ctrl-n,Ctrl-pで前後上下に動けるように。
-inoremap  <Right>
+inoremap  <Right>
 inoremap  <Left>
 inoremap inoremap <Up>
 inoremap vi <Down>
@@ -109,3 +112,4 @@ nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 ""trailは行末スペース。
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
+
