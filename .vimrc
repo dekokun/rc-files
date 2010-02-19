@@ -99,11 +99,13 @@ nnoremap Y y$
 " yyy で全部を貼り付け
 nnoremap yyy ggyG
 
-" 入力モード中に、Ctrl-f、Ctrl-b,Ctrl-n,Ctrl-pで前後上下に動けるように。
+" 入力モード中は、emacsライクに動けるように。
 inoremap  <Right>
 inoremap  <Left>
-inoremap inoremap <Up>
-inoremap vi <Down>
+inoremap  <Up>
+inoremap  <Down>
+inoremap  A
+inoremap  I
 
 "s*と記入することにより、カーソル下の単語を置換
 nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
@@ -113,3 +115,8 @@ nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
+"バックアップ
+set backup
+
+"password file
+source $HOME/.vimrc_local
