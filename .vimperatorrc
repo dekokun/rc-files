@@ -1,79 +1,291 @@
-" set runtimepath=/home/shintaro/.vimperator
-" source! /home/shintaro/.vimperatorrc.local
+"2.0 (created: 2009/03/28 23:48:07)
 
-" vim: set ft=vimperator:
-" retlet .vimperatorrc
-" for Vimperator 1.2pre
+" エラーログ出力用
+javascript <<EOM
+// for liberator.echo()
+let (echo_old = liberator.echo) {
+    liberator.echo = function(str, flags) {
+        liberator.log("echo: " + str, 0);
+        return echo_old(str, flags);
+    }
+}
+
+// for liberator.echoerr()
+let (echoerr_old = liberator.echoerr) {
+    liberator.echoerr = function(str, flags) {
+        liberator.log("echoerr: " + str, 0);
+        return echoerr_old(str, flags);
+    }
+}
+
+// for liberator.echomsg() (only for Vimperator 2.0pre or later)
+let (echomsg_old = liberator.echomsg) {
+    liberator.echomsg = function(str, flags) {
+        liberator.log("echomsg: " + str, 0);
+        return echomsg_old(str, flags);
+    }
+}
+EOM
+
+" prefs
+" ======================================================================
+" caretのサイズ
+"set! ui.caretWidth=10
+
+" undo保持数
+set! browser.sessionstore.max_tabs_undo=30
+
+" タブの閉じるボタン非表示
+set! browser.tabs.closeButtons=2
+
+" ページのアクセスキーを無効化
+set! ui.key.generalAccessKey=0
+
+" Gmail/LDR/Fastladder/OpenFL/はてブでは新規タブをバックグラウンドで開く
+autocmd LocationChange (?!https?://(mail\.google\.com\/(mail|a)\/|(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/|b\.hatena\.ne\.jp/revivre)) :set! browser.tabs.loadDivertedInBackground=false
+autocmd LocationChange https?://(mail\.google\.com\/(mail|a)\/|(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/|b\.hatena\.ne\.jp/revivre) :set! browser.tabs.loadDivertedInBackground=true
 
 
-" 基本設定
-"+----------------------------------------------------------------------------------------+
-" ブラウザのタイトル
-set titlestring=Firefox
-" メニューバーとツールバーを表示
-set guioptions=mr
-" 検索語のハイライト
-set hlsearch
-" ビープを鳴らさない
-set visualbell
-"ビジュアルレベルを無効化
-highlight Bell display:none;
-"HintのStyle
-hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
-"hi Hint font-family:monospace; font-size:10pt; line-height:1.1; color:black; background-color:#CCF; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0;
-"HintのStyle(focus時)
-" hi focusedHint z-index:5000; font-family:monospace; font-size:12px; color:ButtonText; background-color:ButtonShadow; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
-"補完設定
+" options
+" ======================================================================
+" ex mode でインクリメント補完
 set wildoptions=auto
-"タブオープンやオープンで何を表示するか
-set complete=ls
-" twitterとか開いたときにinput要素にfocusを奪われないようにする
+
+" :[tab]open の補完対象と順番
+set complete=lSb
+
+" maine_coon.js
+" set mainecoon=am
+
+" ブラウザタイトルの変更
+set titlestring="Mozilla Firefox 3"
+
+"右側にスクロールバーを表示
+set guioptions=r
+
+" 常にタブを表示
+set showtabline=2
+
+" リンクのURIをステータスラインに表示
+set showstatuslinks=1
+
+" 新規ウィンドウの処理
+set popups=1
+
+" ページロード時にテキストボックスにフォーカスするのを防ぐ
 set focuscontent
-" !でcssの表示切り替え
-map <silent> ! :set invusermode<CR>
-" インサートモードの時に<C-i>でgvimを使って編集できる
-set editor='gvim.exe'
 
+" 詳細表示を5行に(最大値=9)
+set verbose=5
 
-" キーマップ設定
-"+----------------------------------------------------------------------------------------+
-"yで選択範囲をコピー
-"map y :echo 'Yank!'<CR>Y
-"コピー、貼り付け、切り取りをウインドウズライクに"
-map <C-c> <C-Insert>
-map <C-x> <C-Delete>
-inoremap <C-v> <C-v><C-v>
+" Beep設定
+set visualbell
+hi Bell opacity: .5;
 
+"HintのStyle
+set hi Hint z-index:5000;  font-family: ,monaco,monospace; font-size: 20px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px;" line-height: 1em;
+" set hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
+"HintのStyle(focus時)
+"set focusedhintstyle=z-index:5000; font-family:monospace; font-size:12px; color:ButtonText; background-color:ButtonShadow; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
+
+" mappings
+" ======================================================================
 "j/kの移動量を5倍に
-map j 5<C-e>
-map k 5<C-y>
-" 選択文字列のコピーを <C-c> に割り当て
-map <C-c> Y
-" 選択文字列のgoogle検索を <C-g> に割り当て
-map <C-g> YP
+noremap j 5<C-e>
+noremap k 5<C-y>
+"J/KにPageDown,PageUpを割り当て(LDRizeが効いている場合でも指のポジションを動かさずに済む
+noremap J <PageDown>
+noremap K <PageUp>
+"H/Lで戻る/進む
+noremap H <A-Left>
+noremap L <A-Right>
+"h/lでタブ移動
+noremap h gT
+noremap l gt
+"←/→でタブ移動
+map <Left> <C-p>
+map <Right> <C-n>
+"Shift+←/Shift+→でタブ位置変更
+map <S-Right> :tabmove! +1<CR>
+map <S-Left> :tabmove! -1<CR>
 
-" h/l や ← → でタブ移動
-map h <C-p>
-map l <C-n>
+"検索バーにフォーカス
+map <C-k> <C-v><C-k>
+
+"ロケーションバーにフォーカス
+map <C-l> <A-d>
+
+" URL中の数字を++/--
+noremap ++ <C-a>
+noremap -- <C-x>
+
+
+"Ctrl+rで再起動,Ctrl+hでヘルプ ,sで設定ファイル再読込
+map ,s :so _vimperatorrc<CR>
+
+"各種バー表示をトグル
+noremap <C-1> :set guioptions=r<cr>
+noremap <C-2> :set guioptions=Br<cr>
+noremap <C-3> :set guioptions=BmTr<cr>
+noremap <C-4> :set mainecoon=amc<cr>
+noremap <C-5> :set mainecoon=am<cr>
+noremap <C-6> :set mainecoon=m<cr>
+
+"qmarks
+map qm <esc>:qmark<Space>
+map qa <esc>:qmarks<cr>
+
+"LDRize_Cooperationをトグル
+map z <esc>:toggleldrc<cr>
+
+" OSのキーバインドを再現 
+noremap <C-a> <C-v><C-a>
+noremap <C-c> <C-v><C-c>
+
+inoremap <C-a> <C-v><C-a>
+inoremap <C-c> <C-v><C-c>
+inoremap <C-v> <C-v><C-v>
+inoremap <C-x> <C-v><C-x>
+inoremap <C-z> <C-v><C-z>
+inoremap <C-Space> <C-v><C-Space>
+
+cnoremap <C-a> <C-v><C-a>
+cnoremap <C-c> <C-v><C-c>
+cnoremap <C-v> <C-v><C-v>
+cnoremap <C-x> <C-v><C-x>
+cnoremap <C-z> <C-v><C-z>
 
 " .vimperatorrcを再読み込み(:restartしなくてもいい)
 map <C-r> :mapc<CR>:cmapc<CR>:imapc<CR>:so ~/.vimperatorrc<CR>
 
-imap <C-f> <Right>
-imap <C-b> <Left>
-imap <C-n> <Down>
-imap <C-p> <Up>
+" plugins
+" ======================================================================
+" ime_controller.js
+let g:ex_ime_mode = "inactive"
+let g:textarea_ime_mode = "inactive"
 
-" Shift + ← → で現在のタブの位置変更
-map <S-Right> :tabmove! +1<CR>
-map <S-Left>  :tabmove! -1<CR>
+" _smooziee.js
+" let g:smooziee_scroll_amount="100"
+" let g:smooziee_scroll_interval="20"
 
-"<A-r>でFirefoxを再起動
-map <A-r> :restart<CR>
-"<A-h>でヘルプを表示
-map <A-h> :help<CR>
 
-"migemo_hint.js
+" char_hints_mod2.js
+"let g:hints io="IO"
+"let g:hintchars="HJKLASDFGYUIOPQWERTNMZXCVB"
+
+" migemo_hint.js
 set hintmatching=custom
 
-echo ".vimperatorrc sourced"
+" sbmcommentsviewer.js
+"let g:def_sbm_format = "timestamp,id,tagsAndComment"
+"let g:def_sbms = "h"
+"map bb :viewSBMComments<CR>
+
+" direct_bookmark.js
+"let g:direct_sbm_use_services_by_tag = "h"
+"let g:direct_sbm_use_services_by_post = "h"
+"let g:direct_sbm_is_normalize = "false"
+"let g:direct_sbm_is_use_migemo = "true"
+"map B :bentry<CR>
+"map a :sbm<CR>
+"map A :sbm<Space>
+"map ,a :btags<CR>
+
+" ldrize_cooperation.js
+"let g:ldrc_captureMappings = "['j','k','p','o','?']"
+"let g:ldrc_intelligence_bind = "true"
+"let g:ldrc_skip = "0"
+
+"LDR Unread Counter.js
+"let livedoor_id = "your_livedoor_id"
+
+"google-search.js
+"map s :gsearch!<Space>
+
+" lookupDictionary.js
+"map e :eijiro<Space>
+
+" browser_object.js
+"map x dd
+
+" multi_requester.js
+"map ,m,s :so<Space>$RUNTIME/plugin/multi_requester.js
+
+javascript <<EOF
+/* DEFAULT SITES */
+liberator.globalVariables.multi_requester_default_sites = "alc,goo,favotter-new,twitter-search-pcod-no-jp,search-twitter,wikipedia-jp"
+
+/* SITE_INFO */
+liberator.globalVariables.multi_requester_siteinfo = [
+    {
+        name:           'favotter-new',
+        description:    'favotter newest',
+        url:            'http://favotter.matope.com/user.php?user=%s',
+        xpath:          '//div[@class="hentry"]',
+    },
+    {
+        name:           'twitter-search-pcod-no-jp',
+        description:    'twitter search(yats)',
+        url:            'http://pcod.no-ip.org/yats/search?query=%s',
+        xpath:          '//li[@class="hentry"]',
+    },
+    {
+        name:           'wikipedia-jp',
+        description:    'wikipedia(japanese)',
+        url:            'http://ja.wikipedia.org/wiki/%s',
+        xpath:          'id("bodyContent")',
+    },
+    {
+        name:           'search-twitter',
+        description:    'twitter search(search.twitter.com)',
+        url:            'http://search.twitter.com/search?q=%s',
+        xpath:          'id("results")/ul/li',
+    },
+];
+
+/* KEY MAPPING */
+liberator.globalVariables.multi_requester_mappings = [
+	[',mt', 'twitter-search-pcod-no-jp'],
+	[',Mt', 'twitter-search-pcod-no-jp', '!'],
+	[',mT', 'twitter-search-pcod-no-jp',    , '["your_id"]'],
+	[',MT', 'twitter-search-pcod-no-jp', '!', '["your_id"]'],
+	[',mf', 'favotter-new'],
+	[',Mf', 'favotter-new', '!'],
+	[',mF', 'favotter-new',    ,'["your_id"]'],
+	[',MF', 'favotter-new', '!', '["your_id"]'],
+	[',ma', 'alc'],
+	[',Ma', 'alc', '!'],
+	[',mg', 'goo'],
+	[',Mg', 'goo', '!'],
+	[',mw', 'wikipedia-jp'],
+	[',Mw', 'wikipedia-jp', '!']
+];
+EOF
+
+" hatena bookmark
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
+
+
+" feedSomeKeys_2.js
+"autocmd LocationChange .* :fmapc
+" Tumblr (要dashboard+tombloo.user.js, ReblogCommand.user.js)
+"autocmd LocationChange ^http://.*\.tumblr\.com/ :fmap i,tj
+" LDR/Fastladder/OpenFL
+"autocmd LocationChange ^http://(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/ :fmap j k s a p v c z Z b i,ie r < > o,vj J,<Space> K,<S-Space> q w g u T
+" Fastladder Reblog用 (要tombloo.xpi/ldr+tombloo.user.js)
+autocmd LocationChange ^http://(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/ :fmap i,Tj
+" はてブ
+autocmd LocationChange ^http://b\.hatena\.ne\.jp/your_hatena_id :fmap j k o e b
+
+" colorscheme
+" ======================================================================
+" colorscheme BrewBlue
+style -name tab-style-fix chrome://* <<EOM
+.tab-text-shadow,
+.tabs-newtab-button {
+  display: none !important;
+}
+EOM
+
+" gvim: set ft=vimperator:
+
