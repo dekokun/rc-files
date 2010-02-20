@@ -99,6 +99,10 @@ nnoremap Y y$
 " yyy で全部を貼り付け
 nnoremap yyy ggyG
 
+"バッファ操作を快適に
+nnoremap  :bn
+nnoremap  :bp
+
 " 入力モード中は、emacsライクに動けるように。
 inoremap  <Right>
 inoremap  <Left>
