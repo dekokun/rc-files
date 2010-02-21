@@ -49,8 +49,6 @@ set! ui.key.generalAccessKey=0
 " :[tab]open の補完対象と順番
 set complete=lSb
 
-" maine_coon.js
-set mainecoon=am
 
 " ブラウザタイトルの変更
 set titlestring="Mozilla Firefox 3"
@@ -131,9 +129,6 @@ map ,s :so _vimperatorrc<CR>
 noremap <C-1> :set guioptions=r<cr>
 noremap <C-2> :set guioptions=Br<cr>
 noremap <C-3> :set guioptions=BmTr<cr>
-noremap <C-4> :set mainecoon=amc<cr>
-noremap <C-5> :set mainecoon=am<cr>
-noremap <C-6> :set mainecoon=m<cr>
 
 "qmarks
 map qm <esc>:qmark<Space>
