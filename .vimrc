@@ -37,6 +37,9 @@ set matchtime=3
 "y,pでクリップボードを操作できる
 set clipboard+=unnamed
 
+"検索結果をハイライト
+set hlsearch
+
 "vimrc,gvimrcを簡単に編集できるように
 nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
@@ -119,7 +122,7 @@ nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
-"バックアップ
+"バックアップを行う。バックアップディレクトリは.vimrc_localに
 set backup
 
 "password file
