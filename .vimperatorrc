@@ -1,6 +1,6 @@
 "2.0 (created: 2009/03/28 23:48:07)
 
-" エラーログ出力用
+" エラーログ出力用":javascript!"でエラー出力
 javascript <<EOM
 // for liberator.echo()
 let (echo_old = liberator.echo) {
