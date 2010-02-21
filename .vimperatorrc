@@ -62,8 +62,6 @@ set showtabline=2
 " リンクのURIをステータスラインに表示
 set showstatuslinks=1
 
-" 新規ウィンドウの処理
-set popups=1
 
 " ページロード時にテキストボックスにフォーカスするのを防ぐ
 set focuscontent
