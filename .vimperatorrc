@@ -41,21 +41,16 @@ set! browser.tabs.closeButtons=2
 " ページのアクセスキーを無効化
 set! ui.key.generalAccessKey=0
 
-" Gmail/LDR/Fastladder/OpenFL/はてブでは新規タブをバックグラウンドで開く
-autocmd LocationChange (?!https?://(mail\.google\.com\/(mail|a)\/|(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/|b\.hatena\.ne\.jp/revivre)) :set! browser.tabs.loadDivertedInBackground=false
-autocmd LocationChange https?://(mail\.google\.com\/(mail|a)\/|(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/|b\.hatena\.ne\.jp/revivre) :set! browser.tabs.loadDivertedInBackground=true
 
 
 " options
 " ======================================================================
-" ex mode でインクリメント補完
-set wildoptions=auto
 
 " :[tab]open の補完対象と順番
 set complete=lSb
 
 " maine_coon.js
-" set mainecoon=am
+set mainecoon=am
 
 " ブラウザタイトルの変更
 set titlestring="Mozilla Firefox 3"
