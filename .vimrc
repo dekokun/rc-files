@@ -115,6 +115,9 @@ inoremap  A
 inoremap  I
 inoremap  <Del>
 
+" エンターにて、その場で改行
+nnoremap  i
+
 "s*と記入することにより、カーソル下の単語を置換
 nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 
