@@ -107,8 +107,10 @@ nnoremap  :bn
 nnoremap  :bp
 
 "タブ操作を快適に
-nnoremap <Space> :tabedit
-nnoremap <C-Space> :tabclose
+nnoremap <Up> :tabedit
+nnoremap <Down> :tabclose
+nnoremap <Left> :tabprev
+nnoremap <Right> :tabnext
 
 
 " 入力モード中は、emacsライクに動けるように。
