@@ -106,14 +106,36 @@ nnoremap yyy ggyG
 nnoremap  :bn
 nnoremap  :bp
 
+"タブ操作を快適に
+nnoremap <Space> :tabedit
+nnoremap <C-Space> :tabclose
+
+
 " 入力モード中は、emacsライクに動けるように。
 inoremap  <Right>
 inoremap  <Left>
 inoremap  <Up>
 inoremap  <Down>
-inoremap  A
-inoremap  I
+inoremap  <end>
+inoremap  <home>
 inoremap  <Del>
+
+" コマンドモード中も上記同様
+cnoremap  <Right>
+cnoremap  <Left>
+cnoremap  <Up>
+cnoremap  <Down>
+cnoremap  <end>
+cnoremap  <home>
+cnoremap  <Del>
+
+" 検索時に結果が中央に来るようにする
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
 
 " エンターにて、その場で改行
 nnoremap  i
