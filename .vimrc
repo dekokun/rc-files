@@ -54,8 +54,6 @@ nnoremap j gj
 nnoremap k gk
 
 
-let twitvim_login = "dekokun:16721672"
-
 nnoremap  :noh
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
@@ -142,8 +140,8 @@ nmap g# g#zz
 " エンターにて、その場で改行
 nnoremap  i
 
-"s*と記入することにより、カーソル下の単語を置換
-nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
+"スペース*と記入することにより、カーソル下の単語を置換
+nnoremap <expr> <Space>* ':%substitute/\<' . expand('<cword>') . '\>/'
 
 "特殊文字(SpecialKey)の見える化。listcharsはlcsでも設定可能。
 ""trailは行末スペース。
