@@ -150,6 +150,7 @@ set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
 "バックアップを行う。バックアップディレクトリは.vimrc_localに
 set backup
+set swapfile
 
 "password file
 source $HOME/.vimrc_local
