@@ -54,8 +54,6 @@ nnoremap j gj
 nnoremap k gk
 
 
-let twitvim_login = "dekokun:16721672"
-
 nnoremap  :noh
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
@@ -106,16 +104,44 @@ nnoremap yyy ggyG
 nnoremap  :bn
 nnoremap  :bp
 
+"タブ操作を快適に
+nnoremap <Up> :tabedit
+nnoremap <Down> :tabclose
+nnoremap <Left> :tabprev
+nnoremap <Right> :tabnext
+
+
 " 入力モード中は、emacsライクに動けるように。
 inoremap  <Right>
 inoremap  <Left>
 inoremap  <Up>
 inoremap  <Down>
-inoremap  A
-inoremap  I
+inoremap  <end>
+inoremap  <home>
+inoremap  <Del>
 
-"s*と記入することにより、カーソル下の単語を置換
-nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
+" コマンドモード中も上記同様
+cnoremap  <Right>
+cnoremap  <Left>
+cnoremap  <Up>
+cnoremap  <Down>
+cnoremap  <end>
+cnoremap  <home>
+cnoremap  <Del>
+
+" 検索時に結果が中央に来るようにする
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+" エンターにて、その場で改行
+nnoremap  i
+
+"スペース*と記入することにより、カーソル下の単語を置換
+nnoremap <expr> <Space>* ':%substitute/\<' . expand('<cword>') . '\>/'
 
 "特殊文字(SpecialKey)の見える化。listcharsはlcsでも設定可能。
 ""trailは行末スペース。
@@ -124,6 +150,7 @@ set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
 "バックアップを行う。バックアップディレクトリは.vimrc_localに
 set backup
+set swapfile
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
