@@ -151,6 +151,13 @@ set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
 "バックアップを行う。バックアップディレクトリは.vimrc_localに
 set backup
+set swapfile
+
+" When editing a file, always jump to the last cursor position
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\   exe "normal g'\"" |
+\ endif
 
 "password file
 source $HOME/.vimrc_local
