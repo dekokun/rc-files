@@ -119,6 +119,7 @@ inoremap  <Down>
 inoremap  <end>
 inoremap  <home>
 inoremap  <Del>
+inoremap  cb
 
 " コマンドモード中も上記同様
 cnoremap  <Right>
