@@ -131,12 +131,12 @@ cnoremap  <home>
 cnoremap  <Del>
 
 " 検索時に結果が中央に来るようにする
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
+"nmap n nzz
+"nmap N Nzz
+"nmap * *zz
+"nmap # #zz
+"nmap g* g*zz
+"nmap g# g#zz
 
 " エンターにて、その場で改行
 nnoremap  i
