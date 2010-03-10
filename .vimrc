@@ -159,5 +159,8 @@ autocmd BufReadPost *
 \   exe "normal g'\"" |
 \ endif
 
+" inserst mode
+set paste
+
 "password file
 source $HOME/.vimrc_local
