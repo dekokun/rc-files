@@ -160,7 +160,7 @@ autocmd BufReadPost *
 \ endif
 
 " inserst mode
-set paste
+"set paste
 
 "password file
 source $HOME/.vimrc_local
