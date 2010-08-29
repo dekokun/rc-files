@@ -169,7 +169,14 @@ function! ShebangExecute()
     endif
 endfunction
 nmap ,e :call ShebangExecute()<CR>
+"
+" inserst mode
+"set paste
 
+"autocomplpopのphp辞書の場所を指定
+autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
 
 "password file
-source $HOME/.vimrc_local
+if filereadable(expand('$HOME/.vimrc_local'))
+    source $HOME/.vimrc_local
+endif

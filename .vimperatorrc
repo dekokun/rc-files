@@ -86,7 +86,7 @@ set focuscontent
 " !でcssの表示切り替え
 map <silent> ! :set invusermode<CR>
 " インサートモードの時に<C-i>でgvimを使って編集できる
-set editor='gvim.exe'
+set editor='gvim'
 
 " mappings
 " ======================================================================
