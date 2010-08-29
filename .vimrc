@@ -159,5 +159,17 @@ autocmd BufReadPost *
 \   exe "normal g'\"" |
 \ endif
 
+" shebangでファイルを実行する
+function! ShebangExecute()
+    let m = matchlist(getline(1), '#!\(.*\)')
+    if(len(m) > 2)
+        execute '!'. m[1] . ' %'
+    else
+        execute '!' &ft ' %'
+    endif
+endfunction
+nmap ,e :call ShebangExecute()<CR>
+
+
 "password file
 source $HOME/.vimrc_local
