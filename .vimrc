@@ -159,6 +159,17 @@ autocmd BufReadPost *
 \   exe "normal g'\"" |
 \ endif
 
+" shebangでファイルを実行する
+function! ShebangExecute()
+    let m = matchlist(getline(1), '#!\(.*\)')
+    if(len(m) > 2)
+        execute '!'. m[1] . ' %'
+    else
+        execute '!' &ft ' %'
+    endif
+endfunction
+nmap ,e :call ShebangExecute()<CR>
+"
 " inserst mode
 "set paste
 
@@ -168,6 +179,7 @@ augroup BufferAu
     au BufNewFile,BufRead * let g:AutoComplPop_CompleteOption = '.,w,b,u,t'
     au BufNewFile,BufRead *.php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/php.dict'
 augroup END
+autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
 
 "password file
 if filereadable(expand('$HOME/.vimrc_local'))
