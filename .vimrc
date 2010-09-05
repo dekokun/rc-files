@@ -90,9 +90,9 @@ highlight PmenuSel ctermbg=1
 highlight PMenuSbar ctermbg=4
 
 "F5やS-F5を押すことにより、NOTEPADライクに日付が挿入できる
-nnoremap <F5> a<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-nnoremap <S-F5> i<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-inoremap <F5> <C-R>=strftime("%H:%M %Y/%m/%d")<CR>
+"nnoremap <F5> a<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
+"nnoremap <S-F5> i<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
+"inoremap <F5> <C-R>=strftime("%H:%M %Y/%m/%d")<CR>
 
 " Yで、その場所から最後までをヤンク
 nnoremap Y y$
@@ -163,8 +163,11 @@ autocmd BufReadPost *
 "set paste
 
 "autocomplpopのphp辞書の場所を指定
-autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
-
+augroup BufferAu
+    autocmd!
+    au BufNewFile,BufRead * let g:AutoComplPop_CompleteOption = '.,w,b,u,t'
+    au BufNewFile,BufRead *.php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/php.dict'
+augroup END
 
 "password file
 if filereadable(expand('$HOME/.vimrc_local'))

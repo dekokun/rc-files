@@ -1,31 +1,31 @@
 "2.0 (created: 2009/03/28 23:48:07)
 
-" エラーログ出力用":javascript!"でエラー出力
-javascript <<EOM
-// for liberator.echo()
-let (echo_old = liberator.echo) {
-    liberator.echo = function(str, flags) {
-        liberator.log("echo: " + str, 0);
-        return echo_old(str, flags);
-    }
-}
-
-// for liberator.echoerr()
-let (echoerr_old = liberator.echoerr) {
-    liberator.echoerr = function(str, flags) {
-        liberator.log("echoerr: " + str, 0);
-        return echoerr_old(str, flags);
-    }
-}
-
-// for liberator.echomsg() (only for Vimperator 2.0pre or later)
-let (echomsg_old = liberator.echomsg) {
-    liberator.echomsg = function(str, flags) {
-        liberator.log("echomsg: " + str, 0);
-        return echomsg_old(str, flags);
-    }
-}
-EOM
+"" エラーログ出力用":javascript!"でエラー出力
+"javascript <<EOM
+"// for liberator.echo()
+"let (echo_old = liberator.echo) {
+"    liberator.echo = function(str, flags) {
+"        liberator.log("echo: " + str, 0);
+"        return echo_old(str, flags);
+"    }
+"}
+"
+"// for liberator.echoerr()
+"let (echoerr_old = liberator.echoerr) {
+"    liberator.echoerr = function(str, flags) {
+"        liberator.log("echoerr: " + str, 0);
+"        return echoerr_old(str, flags);
+"    }
+"}
+"
+"// for liberator.echomsg() (only for Vimperator 2.0pre or later)
+"let (echomsg_old = liberator.echomsg) {
+"    liberator.echomsg = function(str, flags) {
+"        liberator.log("echomsg: " + str, 0);
+"        return echomsg_old(str, flags);
+"    }
+"}
+"EOM
 
 " prefs
 " ======================================================================
@@ -74,7 +74,7 @@ set visualbell
 hi Bell opacity: .5;
 
 "HintのStyle
-set hi Hint z-index:5000;  font-family: ,monaco,monospace; font-size: 20px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px;" line-height: 1em;
+"set hi Hint z-index:5000;  font-family: ,monaco,monospace; font-size: 20px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px;" line-height: 1em;
 " set hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
 "HintのStyle(focus時)
 "set focusedhintstyle=z-index:5000; font-family:monospace; font-size:12px; color:ButtonText; background-color:ButtonShadow; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
@@ -111,7 +111,6 @@ map <S-Left> :tabmove! -1<CR>
 
 "検索バーにフォーカス
 map <C-k> <C-v><C-k>
-
 "ロケーションバーにフォーカス
 map <C-l> <A-d>
 
@@ -287,3 +286,4 @@ EOM
 " gvim: set ft=vimperator:
 
 echo ".vimperatorrc sourced"
+
