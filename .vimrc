@@ -11,10 +11,10 @@ filetype plugin on
 " 行番号を表示する
 set number
 
- " タブをスペースに変換する
-set expandtab
+ " タブをスペースに変換しない
+set noexpandtab
 
-"本物のステータスライン常に表示させておく
+"本物ステータスライン常に表示させておく
 set laststatus=2
 
  " ステータスラインになんやかや書き加える
@@ -58,6 +58,10 @@ nnoremap  :noh
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
+"snipmateを使用できるように
+let snippets_dir = "$VIMRUNTIME/snippets/"
+source $VIMRUNTIME/plugin/snipMate.vim
+source $VIMRUNTIME/after/plugin/snipMate.vim
 
 "自動的にインデント
 set autoindent
@@ -89,10 +93,6 @@ highlight Pmenu ctermbg=4
 highlight PmenuSel ctermbg=1
 highlight PMenuSbar ctermbg=4
 
-"F5やS-F5を押すことにより、NOTEPADライクに日付が挿入できる
-"nnoremap <F5> a<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-"nnoremap <S-F5> i<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-"inoremap <F5> <C-R>=strftime("%H:%M %Y/%m/%d")<CR>
 
 " Yで、その場所から最後までをヤンク
 nnoremap Y y$
@@ -119,7 +119,7 @@ inoremap  <Down>
 inoremap  <end>
 inoremap  <home>
 inoremap  <Del>
-inoremap  cb
+inoremap  cb<Del>
 
 " コマンドモード中も上記同様
 cnoremap  <Right>
@@ -172,6 +172,13 @@ nmap ,e :call ShebangExecute()<CR>
 "
 " inserst mode
 "set paste
+"
+" 検索をデフォルトでmigemo検索に,g/で普通の検索を
+nnoremap / g/
+nnoremap g/ /
+
+":Big the window Big!
+command! Big wincmd _ | wincmd |
 
 "autocomplpopのphp辞書の場所を指定
 augroup BufferAu
@@ -185,3 +192,5 @@ autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/di
 if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
 endif
+
+
