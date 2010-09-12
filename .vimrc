@@ -60,6 +60,7 @@ nnoremap  :noh
 source $VIMRUNTIME/macros/matchit.vim
 "snipmateを使用できるように
 let snippets_dir = "$VIMRUNTIME/snippets/"
+"本来下記1行は必要ないはず（自動的に読み込まれる）のだがなぜか会社のwindowsだと必要…理由不明…
 source $VIMRUNTIME/plugin/snipMate.vim
 source $VIMRUNTIME/after/plugin/snipMate.vim
 
@@ -174,8 +175,10 @@ nmap ,e :call ShebangExecute()<CR>
 "set paste
 "
 " 検索をデフォルトでmigemo検索に,g/で普通の検索を
-nnoremap / g/
-nnoremap g/ /
+if has('win32')
+  nnoremap / g/
+  nnoremap g/ /
+endif
 
 ":Big the window Big!
 command! Big wincmd _ | wincmd |
