@@ -11,8 +11,8 @@ filetype plugin on
 " 行番号を表示する
 set number
 
- " タブをスペースに変換しない
-set noexpandtab
+ " タブをスペースに変換する
+set expandtab
 
 "本物ステータスライン常に表示させておく
 set laststatus=2
