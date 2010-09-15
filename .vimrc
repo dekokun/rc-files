@@ -63,6 +63,9 @@ let snippets_dir = "$VIMRUNTIME/snippets/"
 "本来下記1行は必要ないはず（自動的に読み込まれる）のだがなぜか会社のwindowsだと必要…理由不明…
 source $VIMRUNTIME/plugin/snipMate.vim
 source $VIMRUNTIME/after/plugin/snipMate.vim
+" snipmate連携
+let g:acp_behaviorSnipmateLength = 1
+
 
 "自動的にインデント
 set autoindent
