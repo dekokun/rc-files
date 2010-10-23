@@ -199,4 +199,5 @@ if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
 endif
 
-
+" crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
+autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
