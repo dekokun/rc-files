@@ -107,6 +107,11 @@ nnoremap yyy ggyG
 "バッファ操作を快適に
 nnoremap  :bn
 nnoremap  :bp
+nnoremap <Space>b :ls<CR>:buffer
+nnoremap <Space>f :edit .<CR>
+nnoremap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nnoremap <Space>V :Vexplore!<CR><CR>
+
 
 "タブ操作を快適に
 nnoremap <Up> :tabedit
