@@ -56,13 +56,19 @@ nnoremap k gk
 
 nnoremap  :noh
 
+" windows用設定
+if has('win32')
+    :set runtimepath+=$HOME/.vim,$HOME/.vim/after
+endif
+
+
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
-"snipmateを使用できるように
-let snippets_dir = "$VIMRUNTIME/snippets/"
 "本来下記1行は必要ないはず（自動的に読み込まれる）のだがなぜか会社のwindowsだと必要…理由不明…
-source $VIMRUNTIME/plugin/snipMate.vim
-source $VIMRUNTIME/after/plugin/snipMate.vim
+source $HOME/.vim/plugin/snipMate.vim
+source $HOME/.vim/after/plugin/snipMate.vim
+"snipmateを使用できるように
+let snippets_dir = "$HOME/vimfiles/snippets/"
 " snipmate連携
 let g:acp_behaviorSnipmateLength = 1
 
@@ -182,11 +188,9 @@ nmap ,e :call ShebangExecute()<CR>
 " inserst mode
 "set paste
 "
-" 検索をデフォルトでmigemo検索に,g/で普通の検索を
-if has('win32')
-  nnoremap / g/
-  nnoremap g/ /
-endif
+
+" Alignを日本語環境で使用するための設定
+:let g:Align_xstrlen = 3
 
 ":Big the window Big!
 command! Big wincmd _ | wincmd |
