@@ -64,10 +64,12 @@ map l <C-n>
 " .vimperatorrcを再読み込み(:restartしなくてもいい)
 map <C-r> :mapc<CR>:cmapc<CR>:imapc<CR>:so ~/.vimperatorrc<CR>
 
+" インサートモードにてemacs ライクな動きを行う
 imap <C-f> <Right>
 imap <C-b> <Left>
 imap <C-n> <Down>
 imap <C-p> <Up>
+imap <C-m> <Enter>
 
 " Shift + ← → で現在のタブの位置変更
 map <S-Right> :tabmove! +1<CR>
