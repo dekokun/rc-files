@@ -30,7 +30,7 @@ set complete=ls
 " twitterとか開いたときにinput要素にfocusを奪われないようにする
 set focuscontent
 " !でcssの表示切り替え
-map <silent> ! :set invusermode<CR>
+noremap <silent> ! :set invusermode<CR>
 " インサートモードの時に<C-i>でgvimを使って編集できる
 set editor='gvim.exe'
 
@@ -45,40 +45,40 @@ set messages=1000
 "yで選択範囲をコピー
 "map y :echo 'Yank!'<CR>Y
 "コピー、貼り付け、切り取りをウインドウズライクに"
-map <C-c> <C-Insert>
-map <C-x> <C-Delete>
+noremap <C-c> <C-Insert>
+noremap <C-x> <C-Delete>
 inoremap <C-v> <C-v><C-v>
 
 "j/kの移動量を5倍に
-map j 5<C-e>
-map k 5<C-y>
+noremap j 5<C-e>
+noremap k 5<C-y>
 " 選択文字列のコピーを <C-c> に割り当て
-map <C-c> Y
+noremap <C-c> Y
 " 選択文字列のgoogle検索を <C-g> に割り当て
-map <C-g> YP
+noremap <C-g> YP
 
 " h/l や ← → でタブ移動
-map h <C-p>
-map l <C-n>
+noremap h <C-p>
+noremap l <C-n>
 
 " .vimperatorrcを再読み込み(:restartしなくてもいい)
-map <C-r> :mapc<CR>:cmapc<CR>:imapc<CR>:so ~/.vimperatorrc<CR>
+noremap <C-r> :mapc<CR>:cmapc<CR>:imapc<CR>:so ~/.vimperatorrc<CR>
 
 " インサートモードにてemacs ライクな動きを行う
-imap <C-f> <Right>
-imap <C-b> <Left>
-imap <C-n> <Down>
-imap <C-p> <Up>
-imap <C-m> <Enter>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-m> <Enter>
 
 " Shift + ← → で現在のタブの位置変更
-map <S-Right> :tabmove! +1<CR>
-map <S-Left>  :tabmove! -1<CR>
+noremap <S-Right> :tabmove! +1<CR>
+noremap <S-Left>  :tabmove! -1<CR>
 
 "<A-r>でFirefoxを再起動
-map <A-r> :restart<CR>
+noremap <A-r> :restart<CR>
 "<A-h>でヘルプを表示
-map <A-h> :help<CR>
+noremap <A-h> :help<CR>
 
 "migemo_hint.js
 set hintmatching=custom
