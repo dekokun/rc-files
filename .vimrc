@@ -68,7 +68,7 @@ source $VIMRUNTIME/macros/matchit.vim
 source $HOME/.vim/plugin/snipMate.vim
 source $HOME/.vim/after/plugin/snipMate.vim
 "snipmateを使用できるように
-let snippets_dir = "$HOME/vimfiles/snippets/"
+let snippets_dir = "$HOME/.vim/snippets/"
 " snipmate連携
 let g:acp_behaviorSnipmateLength = 1
 
