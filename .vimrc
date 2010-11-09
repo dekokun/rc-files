@@ -54,7 +54,7 @@ nnoremap j gj
 nnoremap k gk
 
 
-nnoremap  :noh
+nnoremap <esc><esc> :noh<CR>
 
 " windows用設定
 if has('win32')
@@ -111,8 +111,8 @@ nnoremap Y y$
 nnoremap yyy ggyG
 
 "バッファ操作を快適に
-nnoremap  :bn
-nnoremap  :bp
+nnoremap <C-b> :bn<CR>
+nnoremap <C-p> :bp<CR>
 nnoremap <Space>b :ls<CR>:buffer
 nnoremap <Space>f :edit .<CR>
 nnoremap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
@@ -122,28 +122,28 @@ nnoremap <Space>V :Vexplore!<CR><CR>
 "タブ操作を快適に
 nnoremap <Up> :tabedit
 nnoremap <Down> :tabclose
-nnoremap <Left> :tabprev
-nnoremap <Right> :tabnext
+nnoremap <Left> :tabprev<CR>
+nnoremap <Right> :tabnext<CR>
 
 
 " 入力モード中は、emacsライクに動けるように。
-inoremap  <Right>
-inoremap  <Left>
-inoremap  <Up>
-inoremap  <Down>
-inoremap  <end>
-inoremap  <home>
-inoremap  <Del>
-inoremap  cb<Del>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-e> <end>
+inoremap <C-a> <home>
+inoremap <C-d> <Del>
+inoremap <C-w> <esc>cb<Del>
 
 " コマンドモード中も上記同様
-cnoremap  <Right>
-cnoremap  <Left>
-cnoremap  <Up>
-cnoremap  <Down>
-cnoremap  <end>
-cnoremap  <home>
-cnoremap  <Del>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-e> <end>
+cnoremap <C-a> <home>
+cnoremap <C-d> <Del>
 
 " 検索時に結果が中央に来るようにする
 "nmap n nzz
@@ -153,8 +153,9 @@ cnoremap  <Del>
 "nmap g* g*zz
 "nmap g# g#zz
 
-" エンターにて、その場で改行
-nnoremap  i
+" エンターにて、その場で改行(quickfixウインドウの中でジャンプできるよう
+" これは外す)
+" nnoremap <CR> i<CR><esc>
 
 "スペース*と記入することにより、カーソル下の単語を置換
 nnoremap <expr> <Space>* ':%substitute/\<' . expand('<cword>') . '\>/'
