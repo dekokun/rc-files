@@ -72,6 +72,9 @@ let snippets_dir = "$HOME/.vim/snippets/"
 " snipmate連携
 let g:acp_behaviorSnipmateLength = 1
 
+" pathogen.vim において、自動的にbundleディレクトリ下も読み込む
+call pathogen#runtime_append_all_bundles()
+
 
 "自動的にインデント
 set autoindent
