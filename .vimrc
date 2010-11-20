@@ -18,7 +18,7 @@ set expandtab
 set laststatus=2
 
  " ステータスラインになんやかや書き加える
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
  " BSでなんやかや削除できるようになる
 set backspace=indent,eol,start
