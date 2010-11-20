@@ -166,9 +166,11 @@ nnoremap <expr> <Space>* ':%substitute/\<' . expand('<cword>') . '\>/'
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
-"バックアップを行う。バックアップディレクトリは.vimrc_localに
+"バックアップを行う。
 set backup
 set swapfile
+set backupdir=$HOME/.vim/backup
+let &directory = &backupdir
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
