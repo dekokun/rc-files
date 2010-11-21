@@ -42,6 +42,10 @@ alias vizsh='vi ~/.zshrc; source ~/.zshrc'
 alias vivimrc='vi ~/.vimrc'
 alias viemacs='vi ~/.emacs'
 alias spec='spec'
+alias gs='git status $@'
+alias gd='git diff $@'
+alias ga='git add -p $@'
+alias gc='git commit -v $@'
 
 # history設定
 HISTFILE=~/.zsh_history
@@ -126,4 +130,5 @@ bindkey "\," cdup
 
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
-
+# bashrc読み込み
+[ -f $HOME/.bashrc ] && source $HOME/.bashrc
