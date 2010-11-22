@@ -18,7 +18,7 @@ set expandtab
 set laststatus=2
 
  " ステータスラインになんやかや書き加える
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
  " BSでなんやかや削除できるようになる
 set backspace=indent,eol,start
@@ -65,12 +65,15 @@ endif
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
 "本来下記1行は必要ないはず（自動的に読み込まれる）のだがなぜか会社のwindowsだと必要…理由不明…
-source $HOME/.vim/plugin/snipMate.vim
-source $HOME/.vim/after/plugin/snipMate.vim
+"source $HOME/.vim/plugin/snipMate.vim
+"source $HOME/.vim/after/plugin/snipMate.vim
 "snipmateを使用できるように
 let snippets_dir = "$HOME/.vim/snippets/"
 " snipmate連携
 let g:acp_behaviorSnipmateLength = 1
+
+" pathogen.vim において、自動的にbundleディレクトリ下も読み込む
+call pathogen#runtime_append_all_bundles()
 
 
 "自動的にインデント
@@ -140,8 +143,6 @@ inoremap <C-w> <esc>cb<Del>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-cnoremap <C-e> <end>
 cnoremap <C-a> <home>
 cnoremap <C-d> <Del>
 
@@ -171,9 +172,11 @@ nnoremap <expr> <Space>; ':vimgrep ' . expand('<cword>') . ' **/* \| cwin'
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:$
 
-"バックアップを行う。バックアップディレクトリは.vimrc_localに
+"バックアップを行う。
 set backup
 set swapfile
+set backupdir=$HOME/.vim/backup
+let &directory = &backupdir
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *

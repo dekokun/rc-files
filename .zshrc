@@ -42,6 +42,10 @@ alias vizsh='vi ~/.zshrc; source ~/.zshrc'
 alias vivimrc='vi ~/.vimrc'
 alias viemacs='vi ~/.emacs'
 alias spec='spec'
+alias gs='git status $@'
+alias gd='git diff $@'
+alias ga='git add -p $@'
+alias gc='git commit -v $@'
 
 # history設定
 HISTFILE=~/.zsh_history
@@ -66,13 +70,22 @@ zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=32' 'bd=46;34' 'c
 setopt prompt_subst
 autoload colors
 colors
-PROMPT="%B%{[35;40m%}[deko %c/]%%%{[m%}%b%{$reset_color%} "
-PROMPT2="%{[35;40m%}%_%%%{[m%}%{$reset_color%} "
-SPROMPT="%{[35;40m%}%r is correct? [n,y,a,e]:%{[m%}%{$reset_color%} "
-RPROMPT="%{[36;40m%}[%~]%{m%}%{${reset_color}%} "
-#リモートログイン時のホスト名のカラーを変更 - 文字も大文字へ変更
-[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+case ${UID} in
+0)
+    PROMPT="%B%{[31m%}%/#%{[m%}%b "
+    PROMPT2="%B%{[31m%}%_#%{[m%}%b "
+    SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
+    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+        PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+    ;;
+*)
+    PROMPT="%{[31m%}%/%%%{[m%} "
+    PROMPT2="%{[31m%}%_%%%{[m%} "
+    SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
+    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+        PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+    ;;
+esac 
 
 # TABで変換候補切り替え
 setopt auto_menu
@@ -126,4 +139,3 @@ bindkey "\," cdup
 
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
-
