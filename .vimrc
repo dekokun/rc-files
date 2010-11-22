@@ -111,7 +111,7 @@ nnoremap Y y$
 nnoremap yyy ggyG
 
 "バッファ操作を快適に
-nnoremap <C-b> :bn<CR>
+nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
 nnoremap <Space>b :ls<CR>:buffer
 nnoremap <Space>f :edit .<CR>
