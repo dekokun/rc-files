@@ -159,6 +159,12 @@ cnoremap <C-d> <Del>
 
 "スペース*と記入することにより、カーソル下の単語を置換
 nnoremap <expr> <Space>* ':%substitute/\<' . expand('<cword>') . '\>/'
+"スペース:と記入することにより、カーソル下の文字を置換
+nnoremap <expr> <Space>: ':%substitute/' . expand('<cword>') . '/'
+
+
+"スペース+と記入することにより、カーソル下の単語をvimgrep
+nnoremap <expr> <Space>; ':vimgrep ' . expand('<cword>') . ' **/* \| cwin'
 
 "特殊文字(SpecialKey)の見える化。listcharsはlcsでも設定可能。
 ""trailは行末スペース。
