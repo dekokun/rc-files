@@ -98,6 +98,8 @@ au BufRead,BufNewFile *_spec.rb :command! RSpec :call RSpec()
 "自動的にインデント
 set autoindent
 
+"pasteのトグルをF11に割り当て
+set pastetoggle=<F11>
 
 "全角スペースを＿と表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
