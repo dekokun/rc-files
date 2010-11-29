@@ -44,6 +44,9 @@ set hlsearch
 nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
 
+" - で現在のファイルのあるディレクトリを開く
+nnoremap - :<C-u>e %:h<Cr>
+
 "F5やS-F5を押すことにより、NOTEPADライクに日付が挿入できる
 map <F5> a<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
 map <S-F5> i<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
@@ -75,6 +78,9 @@ let g:acp_behaviorSnipmateLength = 1
 " pathogen.vim において、自動的にbundleディレクトリ下も読み込む
 call pathogen#runtime_append_all_bundles()
 
+"quickrun.vimの設定
+let g:quickrun_config = {}
+let g:quickrun_config['ruby.rspec'] = {'command': 'spec'}
 
 "自動的にインデント
 set autoindent
@@ -212,6 +218,12 @@ augroup BufferAu
     au BufNewFile,BufRead *.php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/php.dict'
 augroup END
 autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
+
+" rspecファイルのファイルタイプ変更
+augroup UjihisaRSpec
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+augroup END
 
 "password file
 if filereadable(expand('$HOME/.vimrc_local'))
