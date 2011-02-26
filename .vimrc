@@ -80,6 +80,7 @@ call pathogen#runtime_append_all_bundles()
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
+nmap ,t <leader>r
 
 "自動的にインデント
 set autoindent
