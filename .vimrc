@@ -201,7 +201,8 @@ function! ShebangExecute()
         execute '!' &ft ' %'
     endif
 endfunction
-nmap ,e :call ShebangExecute()<CR>
+"保存して実行
+nmap ,e :w<CR>:call ShebangExecute()<CR>
 "
 " inserst mode
 "set paste
