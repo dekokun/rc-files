@@ -204,6 +204,8 @@ endfunction
 "実行
 noremap ,e :w<CR>:call ShebangExecute()<CR>
 "
+"文法チェック
+noremap ,l :call SyntaxCheck()<CR>
 " inserst mode
 "set paste
 "
