@@ -85,3 +85,5 @@ set hintmatching=custom
 
 echo ".vimperatorrc sourced"
 
+" このファイルをvimのシンタックスで表示
+" vim: ft=vim
