@@ -45,6 +45,7 @@ alias gs='git status $@'
 alias gd='git diff $@'
 alias ga='git add -p $@'
 alias gc='git commit -v $@'
+alias r=rails
 
 # history設定
 HISTFILE=~/.zsh_history
