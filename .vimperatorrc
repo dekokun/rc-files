@@ -1,6 +1,3 @@
-" set runtimepath=/home/shintaro/.vimperator
-" source! /home/shintaro/.vimperatorrc.local
-
 " vim: set ft=vimperator:
 " retlet .vimperatorrc
 " for Vimperator 1.2pre
