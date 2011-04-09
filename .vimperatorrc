@@ -7,21 +7,16 @@
 "+----------------------------------------------------------------------------------------+
 " ブラウザのタイトル
 set titlestring=Firefox
-" メニューバーとツールバーを表示
-set guioptions=Bmr
 " 検索語のハイライト
 set hlsearch
 " ビープを鳴らさない
 set visualbell
 "ビジュアルレベルを無効化
 highlight Bell display:none;
-"HintのStyle
-hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
-"hi Hint font-family:monospace; font-size:10pt; line-height:1.1; color:black; background-color:#CCF; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0;
-"HintのStyle(focus時)
-" hi focusedHint z-index:5000; font-family:monospace; font-size:12px; color:ButtonText; background-color:ButtonShadow; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
-"補完設定
-set wildoptions=auto
+" ヒントモードを英字にする
+set hintchars=ifjklasdhguonmerwc
+" ヒントモードの英字は大文字に
+hi Hint z-index:5000; font-size:14px; color:white; background-color:red; border-color:ButtonShadow; border-width:0px; border-style:solid; padding:0px 2px 0px 2px; position:absolute; font-family: Menlo, Consolas, Monaco, monospace; text-transform: uppercase;
 "タブオープンやオープンで何を表示するか
 set complete=ls
 " twitterとか開いたときにinput要素にfocusを奪われないようにする
@@ -29,7 +24,7 @@ set focuscontent
 " !でcssの表示切り替え
 noremap <silent> ! :set invusermode<CR>
 " インサートモードの時に<C-i>でgvimを使って編集できる
-set editor='gvim.exe'
+set editor='gvim'
 
 " history 1000
 set messages=1000
@@ -76,9 +71,6 @@ noremap <S-Left>  :tabmove! -1<CR>
 noremap <A-r> :restart<CR>
 "<A-h>でヘルプを表示
 noremap <A-h> :help<CR>
-
-"migemo_hint.js
-set hintmatching=custom
 
 echo ".vimperatorrc sourced"
 
