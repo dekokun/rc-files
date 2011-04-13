@@ -8,7 +8,7 @@
 " ブラウザのタイトル
 set titlestring=Firefox
 " メニューバーとツールバーを表示
-set guioptions=Bmr
+" set guioptions=Bmr
 " 検索語のハイライト
 set hlsearch
 " ビープを鳴らさない
@@ -16,12 +16,12 @@ set visualbell
 "ビジュアルレベルを無効化
 highlight Bell display:none;
 "HintのStyle
-hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
+" hi Hint z-index:5000; font-family:monospace; font-size:15px; color:white; background-color:blue; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
 "hi Hint font-family:monospace; font-size:10pt; line-height:1.1; color:black; background-color:#CCF; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0;
 "HintのStyle(focus時)
 " hi focusedHint z-index:5000; font-family:monospace; font-size:12px; color:ButtonText; background-color:ButtonShadow; border-color:ButtonShadow; border-width:1px; border-style:solid; padding:0px 1px 0px 1px; position:absolute;
 "補完設定
-set wildoptions=auto
+" set wildoptions=auto
 "タブオープンやオープンで何を表示するか
 set complete=ls
 " twitterとか開いたときにinput要素にfocusを奪われないようにする
@@ -78,7 +78,7 @@ noremap <A-r> :restart<CR>
 noremap <A-h> :help<CR>
 
 "migemo_hint.js
-set hintmatching=custom
+" set hintmatching=custom
 
 echo ".vimperatorrc sourced"
 
