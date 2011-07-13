@@ -39,18 +39,9 @@ set messages=1000
 
 " キーマップ設定
 "+----------------------------------------------------------------------------------------+
-"yで選択範囲をコピー
-"map y :echo 'Yank!'<CR>Y
-"コピー、貼り付け、切り取りをウインドウズライクに"
-noremap <C-c> <C-Insert>
-noremap <C-x> <C-Delete>
-inoremap <C-v> <C-v><C-v>
-
 "j/kの移動量を5倍に
 noremap j 5<C-e>
 noremap k 5<C-y>
-" 選択文字列のコピーを <C-c> に割り当て
-noremap <C-c> Y
 " 選択文字列のgoogle検索を <C-g> に割り当て
 noremap <C-g> YP
 
