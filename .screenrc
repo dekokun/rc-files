@@ -8,4 +8,4 @@ bind -c resize ^]  command
 bind -c resize j eval 'resize +1' 'command -c resize'
 bind -c resize k eval 'resize -1' 'command -c resize'
 shell zsh
-scrollback 5000
+defscrollback 5000
