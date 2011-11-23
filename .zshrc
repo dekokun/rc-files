@@ -128,5 +128,9 @@ kterm*|xterm)
     ;;
 esac
 
+#SCREEN起動
+if [ $TERM != "screen" ]; then
+    exec screen -S main -xRR
+fi 
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
