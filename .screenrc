@@ -1,7 +1,7 @@
+#説明:http://www.yuuan.net/blog/?itemid=369
 defencoding utf-8
 escape ^z^z
-hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
-hardstatus alwayslastline "%w"
+hardstatus alwayslastline "%{= Gk} %-Lw%40L>%{b kg} %n %t %{-}%+Lw%-040=%{b km} %l %{.b} %Y/%m/%d"
 #C-z rで対話的に画面の大きさを変更
 bind r eval 'echo "Resize window"' 'command -c resize'
 bind -c resize ^]  command
@@ -9,3 +9,7 @@ bind -c resize j eval 'resize +1' 'command -c resize'
 bind -c resize k eval 'resize -1' 'command -c resize'
 shell zsh
 defscrollback 5000
+# 別画面サポート。Vimやlessを閉じた際に画面を書き換える
+altscreen on
+caption always "%{= Rk} %?%F%{b kr}%? %?%h%:%t (screen #%n)%? %{-}"
+sorendition "= Rk"
