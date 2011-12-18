@@ -1,5 +1,5 @@
 # 言語設定
-export LANG=ja_JP.UTF-8 
+export LANG=ja_JP.UTF-8
 
 # emacsバインド
 bindkey -e
@@ -42,9 +42,13 @@ alias vizsh='vi ~/.zshrc; source ~/.zshrc'
 alias vivimrc='vi ~/.vimrc'
 alias viemacs='vi ~/.emacs'
 alias gs='git status $@'
+alias ga='git add'
+alias gc='git commit'
+alias gC='git commit --amend'
+alias gch='git checkout'
 alias gd='git diff $@'
-alias ga='git add -p $@'
-alias gc='git commit -v $@'
+alias gD='git diff --cached'
+alias gl='git log'
 alias r=rails
 
 # history設定
