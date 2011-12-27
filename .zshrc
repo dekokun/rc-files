@@ -147,6 +147,12 @@ if [[ -f ~/.nvm/nvm.sh ]]; then
   fi
 fi
 
+# RVM
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# PerlBrew
+[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+
 #SCREEN起動
 if [ $TERM != "screen" ]; then
     exec screen -S main -xRR
