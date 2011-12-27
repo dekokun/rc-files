@@ -133,6 +133,11 @@ kterm*|xterm)
     ;;
 esac
 
+# 拡張子指定でテンポラリファイル作成
+vitmp() {
+    vi `mktemp /tmp/temp.XXXXXX`.$1
+}
+
 # nvm と指定されたバージョンの Node.js がインストール済みの場合だけ
 # 設定を有効にする
 if [[ -f ~/.nvm/nvm.sh ]]; then
