@@ -155,7 +155,8 @@ if [ $TERM != "screen" ]; then
     exec screen -S main -xRR
 fi 
 
-source ~/tool/git-completion.bash
+# Git補完
+[[ -s $HOME/.git-completion.bash ]] && source $HOME/.git-completion.bash
 
 function rprompt-git-current-branch {
         local name st color
@@ -184,5 +185,6 @@ function rprompt-git-current-branch {
 }
 
 RPROMPT='[`rprompt-git-current-branch`%~]'
+
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
