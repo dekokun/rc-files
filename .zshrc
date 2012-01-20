@@ -138,6 +138,9 @@ vitmp() {
     vi `mktemp /tmp/temp.XXXXXX`.$1
 }
 
+# cdしたときに自動的にlsを打つ
+function chpwd() { ls }
+
 # nvm と指定されたバージョンの Node.js がインストール済みの場合だけ
 # 設定を有効にする
 if [[ -f ~/.nvm/nvm.sh ]]; then
