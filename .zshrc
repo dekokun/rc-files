@@ -151,8 +151,6 @@ vitmp() {
     vi `mktemp /tmp/temp.XXXXXX`.$1
 }
 
-# cdしたときに自動的にlsを打つ
-function chpwd() { ls }
 
 #SCREEN起動
 if [ $TERM != "screen" ]; then
