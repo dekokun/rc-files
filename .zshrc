@@ -13,7 +13,7 @@ export MAILCHECK=0
 umask 022
 
 # BSD用lsのカラー設定
-export LSCOLORS=exfxbxdxcxegedabagacad
+export LSCOLORS=Gxfxbxdxcxegedabagacad
 
 # 様々な設定を行う前に各種ツールの読み込み
 # nvm と指定されたバージョンの Node.js がインストール済みの場合だけ
@@ -90,16 +90,16 @@ autoload colors
 colors
 case ${UID} in
 0)
-    PROMPT="%B%{[31m%}%/#%{[m%}%b "
-    PROMPT2="%B%{[31m%}%_#%{[m%}%b "
-    SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
+    PROMPT="%B%{[1;31m%}%/#%{[m%}%b "
+    PROMPT2="%B%{[1;31m%}%_#%{[m%}%b "
+    SPROMPT="%B%{[1;31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
         PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
     ;;
 *)
-    PROMPT="%{[31m%}%/%%%{[m%} "
-    PROMPT2="%{[31m%}%_%%%{[m%} "
-    SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
+    PROMPT="%{[1;31m%}%/%%%{[m%} "
+    PROMPT2="%{[1;31m%}%_%%%{[m%} "
+    SPROMPT="%{[1;31m%}%r is correct? [n,y,a,e]:%{[m%} "
     [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
         PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
     ;;
