@@ -15,4 +15,4 @@ caption always "%{= Rk} %?%F%{b kr}%? %?%h%:%t (screen #%n)%? %{-}"
 sorendition "= Rk"
 bind ^U encoding utf8
 bind ^E encoding euc
-bind ^J encoding sjis
+bind ^S encoding sjis
