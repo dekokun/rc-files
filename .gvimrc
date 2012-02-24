@@ -13,7 +13,7 @@ colorscheme torte
 
 
 if has('gui_macvim')
-    set transparency=10 " 透明度を指定
+    set transparency=30 " 透明度を指定
     set antialias
     set guioptions-=t   " ツールバー非表示
     set guioptions-=r   " 右スクロールバー非表示
