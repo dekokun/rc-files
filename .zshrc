@@ -15,19 +15,6 @@ umask 022
 # BSD用lsのカラー設定
 export LSCOLORS=Gxfxbxdxcxegedabagacad
 
-# 様々な設定を行う前に各種ツールの読み込み
-# nvm と指定されたバージョンの Node.js がインストール済みの場合だけ
-# 設定を有効にする
-if [[ -f ~/.nvm/nvm.sh ]]; then
-  source ~/.nvm/nvm.sh
-fi
-
-# RVM
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
-# PerlBrew
-[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
-
 # OSによってlsオプションを分ける
 case "${OSTYPE}" in
 freebsd*|darwin*)
