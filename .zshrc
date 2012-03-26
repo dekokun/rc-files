@@ -175,5 +175,9 @@ function rprompt-git-current-branch {
 
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
+if [ -f `brew --prefix`/etc/autojump ]; then
+    . `brew --prefix`/etc/autojump
+fi
+
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
