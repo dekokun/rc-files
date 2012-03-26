@@ -141,7 +141,7 @@ vitmp() {
 
 #SCREEN起動
 if [ $TERM != "screen" ]; then
-    exec screen -S main -xRR
+    exec screen -S main -RR
 fi 
 
 # Git補完
