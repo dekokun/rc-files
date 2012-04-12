@@ -123,12 +123,5 @@ if [ $TERM != "screen" ]; then
     exec screen -S main -RR
 fi 
 
-# Git補完
-[[ -s $HOME/.git-completion.bash ]] && source $HOME/.git-completion.bash
-
-if [ -f `brew --prefix`/etc/autojump ]; then
-    . `brew --prefix`/etc/autojump
-fi
-
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
