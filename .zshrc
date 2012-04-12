@@ -34,3 +34,50 @@ plugins=(git autojump)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+#
+bindkey -e
+
+# BSD用lsのカラー設定
+export LSCOLORS=Gxfxbxdxcxegedabagacad
+# alias
+setopt complete_aliases
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ll='ls -lh'
+alias vi='vim'
+alias em='emacs'
+alias h='history -E -32'
+alias vizsh='vi ~/.zshrc; source ~/.zshrc'
+alias vivimrc='vi ~/.vimrc'
+alias viemacs='vi ~/.emacs'
+alias gs='git status $@'
+alias gb='git branch'
+alias ga='git add'
+alias gc='git commit'
+alias gC='git commit --amend'
+alias gco='git checkout'
+alias gd='git diff $@'
+alias gD='git diff --cached'
+alias gl='git log'
+alias r=rails
+
+# history設定
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt hist_ignore_dups
+setopt share_history
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+#SCREEN起動
+if [ $TERM != "screen" ]; then
+    exec screen -S main -RR
+fi 
+
+# 各環境依存の設定読み込み
+[ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
