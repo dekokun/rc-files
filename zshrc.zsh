@@ -71,27 +71,6 @@ compinit
 # lsの配色と補完候補の配色を合わせる
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=32' 'bd=46;34' 'cd=43;34'
 
-# プロンプト設定
-setopt prompt_subst
-autoload colors
-colors
-case ${UID} in
-0)
-    PROMPT="%B%{[1;31m%}%/#%{[m%}%b "
-    PROMPT2="%B%{[1;31m%}%_#%{[m%}%b "
-    SPROMPT="%B%{[1;31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-    ;;
-*)
-    PROMPT="%{[1;31m%}%/%%%{[m%} "
-    PROMPT2="%{[1;31m%}%_%%%{[m%} "
-    SPROMPT="%{[1;31m%}%r is correct? [n,y,a,e]:%{[m%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-    ;;
-esac 
-
 # TABで変換候補切り替え
 setopt auto_menu
 
@@ -146,34 +125,6 @@ fi
 
 # Git補完
 [[ -s $HOME/.git-completion.bash ]] && source $HOME/.git-completion.bash
-
-function rprompt-git-current-branch {
-        local name st color
-
-        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-                return
-        fi
-        name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
-        if [[ -z $name ]]; then
-                return
-        fi
-        st=`git status 2> /dev/null`
-        if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-                color=${fg[green]}
-        elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-                color=${fg[yellow]}
-        elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-                color=${fg_bold[red]}
-        else
-                color=${fg[red]}
-        fi
-
-        # %{...%} は囲まれた文字列がエスケープシーケンスであることを明示する
-        # これをしないと右プロンプトの位置がずれる
-        echo "%{$color%}$name%{$reset_color%} "
-}
-
-RPROMPT='[`rprompt-git-current-branch`%~]'
 
 if [ -f `brew --prefix`/etc/autojump ]; then
     . `brew --prefix`/etc/autojump
