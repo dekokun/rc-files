@@ -19,3 +19,6 @@ bind ^J encoding sjis
 bindkey -m ' ' eval 'stuff " "' writebuf 'exec sh -c "pbcopy < /tmp/screen-exchange"'
 bindkey -m 'Y' eval 'stuff "Y"' writebuf 'exec sh -c "pbcopy < /tmp/screen-exchange"'
 bindkey -m 'W' eval 'stuff "W"' writebuf 'exec sh -c "pbcopy < /tmp/screen-exchange"'
+logfile /Users/n00823/logs/screen-%n-%H-%y%m%d.log
+log on
+deflog on
