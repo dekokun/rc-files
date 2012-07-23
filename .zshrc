@@ -61,6 +61,7 @@ alias gd='git diff $@'
 alias gD='git diff --cached'
 alias gl='git log'
 alias r=rails
+alias t=todo
 
 # history設定
 HISTFILE=~/.zsh_history
