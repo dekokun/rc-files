@@ -75,10 +75,5 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
-#SCREEN起動
-if [ $TERM != "screen" ]; then
-    exec screen -S main -RR
-fi 
-
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
