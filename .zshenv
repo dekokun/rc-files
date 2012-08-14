@@ -10,3 +10,5 @@ fi
 
 # RVM
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+export PATH=/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin
