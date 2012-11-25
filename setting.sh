@@ -15,3 +15,10 @@ vim +"NeoBundleInstall" +"q"
 
 # tmux
 ln -s ~/rc/.tmux.conf ~/.tmux.conf
+(
+  cd /tmp
+  git clone https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
+  cd tmux-MacOSX-pasteboard
+  make
+  cp reattach-to-user-namespace ~/bin/
+)
