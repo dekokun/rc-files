@@ -12,3 +12,6 @@ git clone git@github.com:dekokun/vimruntime.git ~/.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 vim +"NeoBundleInstall" +"q"
+
+# tmux
+ln -s ~/rc/.tmux.conf ~/.tmux.conf
