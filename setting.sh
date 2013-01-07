@@ -12,6 +12,7 @@ git clone git@github.com:dekokun/vimruntime.git ~/.vim
 ln -s ~/.vim/.vimrc ~/.vimrc
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 vim +"NeoBundleInstall" +"q"
+git config --global core.editor `which vim`
 
 # tmux
 ln -s ~/rc/.tmux.conf ~/.tmux.conf
@@ -22,3 +23,11 @@ ln -s ~/rc/.tmux.conf ~/.tmux.conf
   make
   cp reattach-to-user-namespace ~/bin/
 )
+
+# autojump
+if [ -f `brew --prefix`/share/zsh/site-functions/_j ]; then
+  ln -s `brew --prefix`/share/zsh/site-functions/_j ~/.oh-my-zsh/plugins/autojump/_j
+else
+  echo 'please install autojump with homebrew'
+fi
+
