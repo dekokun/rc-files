@@ -32,6 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git autojump svn vagrant brew)
 
 source $ZSH/oh-my-zsh.sh
+export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
 
 # Customize to your needs...
 #
