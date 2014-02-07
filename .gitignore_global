@@ -1,0 +1,6 @@
+.DS_Store
+tags
+.svn
+.idea/
+*.iml
+api/htdocs/1.1
