@@ -80,3 +80,6 @@ bindkey "^N" history-beginning-search-forward-end
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
