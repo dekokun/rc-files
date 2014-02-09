@@ -1,0 +1,6 @@
+*.rb diff=ruby
+*.php diff=php
+*.html diff=html
+*.HTML diff=html
+*.python diff=python
+*.perl diff=perl
