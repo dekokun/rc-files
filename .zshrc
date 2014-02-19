@@ -29,10 +29,10 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump svn vagrant brew)
+plugins=(autojump git svn vagrant brew)
 
 source $ZSH/oh-my-zsh.sh
-export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
+# export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
 
 # Customize to your needs...
 #
@@ -52,13 +52,13 @@ alias h='history -E -32'
 alias vizsh='vi ~/.zshrc; source ~/.zshrc'
 alias vivimrc='vi ~/.vimrc'
 alias viemacs='vi ~/.emacs'
-alias gs='git status $@'
+alias gs='git status --short --branch $@'
 alias gb='git branch'
-alias ga='git add'
+# alias ga='git add'
 alias gc='git commit'
 alias gC='git commit --amend'
 alias gco='git checkout'
-alias gd='git diff $@'
+alias gd='git diff --color-words $@'
 alias gD='git diff --cached'
 alias gl='git log'
 alias r=rails
