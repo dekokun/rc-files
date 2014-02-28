@@ -24,10 +24,3 @@ ln -s ~/rc/.tmux.conf ~/.tmux.conf
   cp reattach-to-user-namespace ~/bin/
 )
 
-# autojump
-if [ -f `brew --prefix`/share/zsh/site-functions/_j ]; then
-  ln -s `brew --prefix`/share/zsh/site-functions/_j ~/.oh-my-zsh/plugins/autojump/_j
-else
-  echo 'please install autojump with homebrew'
-fi
-
