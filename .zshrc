@@ -42,7 +42,6 @@ bindkey -e
 # BSD用lsのカラー設定
 export LSCOLORS=Gxfxbxdxcxegedabagacad
 # alias
-setopt complete_aliases
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
