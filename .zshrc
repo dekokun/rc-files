@@ -29,8 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-_Z_CMD=j
-plugins=(z git svn vagrant brew)
+plugins=(autojump git svn vagrant brew)
 
 source $ZSH/oh-my-zsh.sh
 # export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
