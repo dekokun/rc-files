@@ -86,6 +86,12 @@ if exists peco; then
     }
     zle -N peco-kill-process
     bindkey '^K' peco-kill-process   # C-x k
+
+    function peco-checkout-branches () {
+        git checkout $(git branch | peco)
+    }
+    zle -N peco-checkout-branches
+    bindkey '^B' peco-checkout-branches   # C-x k
 fi
 
 
