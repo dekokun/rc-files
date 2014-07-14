@@ -31,12 +31,10 @@ else
   echo 'please install autojump with homebrew'
 fi
 
-# percol
+# peco
 (
-  cd /tmp
-  git clone https://github.com/mooz/percol.git
-  cd percol
-  sudo python setup.py install
-  ln -s ~/rc/.percol.d/ ~/.percol.d
+    brew install go
+    go get peco
 )
+
 
