@@ -85,13 +85,19 @@ if exists peco; then
         zle clear-screen
     }
     zle -N peco-kill-process
-    bindkey '^K' peco-kill-process   # C-x k
+    bindkey '^xk' peco-kill-process
 
     function peco-checkout-branches () {
         git checkout $(git branch | peco)
     }
     zle -N peco-checkout-branches
-    bindkey '^B' peco-checkout-branches   # C-x k
+    bindkey '^xb' peco-checkout-branches
+
+    function peco-diff-file () {
+    git diff $(git status --short | awk '{print $2}' | peco)
+    }
+    zle -N peco-diff-file
+    bindkey '^xd' peco-diff-file
 fi
 
 
