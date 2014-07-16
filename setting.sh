@@ -37,4 +37,5 @@ fi
     go get peco
 )
 
-
+# intellijIDEAの設定
+ln -s ~/rc/.ideavimrc ~/.ideavimrc

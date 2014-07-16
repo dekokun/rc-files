@@ -1,0 +1,23 @@
+" 検索をファイルの先頭へ循環しない
+set nowrapscan
+
+" 大文字小文字の区別なし
+set ignorecase
+
+" 検索時に大文字を含んでいたら大/小を区別
+set smartcase
+
+" 検索対象をハイライト
+" ハイライトを消す場合は:noh[l]
+set hlsearch
+
+" esc連打でhighlight解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" レジスタとclipboardの同期
+nnoremap y "*y
+vnoremap y "*y
+nnoremap p "+P
+nnoremap x "*x
+vnoremap x "*x
+
