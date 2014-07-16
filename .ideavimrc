@@ -21,3 +21,6 @@ nnoremap p "+P
 nnoremap x "*x
 vnoremap x "*x
 
+"x キー削除でデフォルトレジスタに入れない
+nnoremap x "_x
+vnoremap x "_x
