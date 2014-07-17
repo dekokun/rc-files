@@ -12,5 +12,5 @@ fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 export PATH=/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin
-export GOPATH=~/go
+export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
