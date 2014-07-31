@@ -14,7 +14,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " レジスタとclipboardの同期
 nnoremap y "*y
 vnoremap y "*y
-nnoremap p "+P
 nnoremap x "*x
 vnoremap x "*x
 
