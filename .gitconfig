@@ -20,8 +20,8 @@
 	c = commit -v
 	o = checkout
 	co = checkout
-	p = pull
-	pu = push
+	pl = pull
+	ps = push
 	cob = checkout -b
 	l = log --color --decorate
 	d = diff --color-words
