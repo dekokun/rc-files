@@ -48,8 +48,9 @@ alias ll='ls -lh'
 alias vi='vim'
 alias h='history -E -32'
 
+# git checkout B  などと使う。ブランチの絞込
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
-alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'
+# git checkout -b LR などと使う。リモートブランチを絞り込んでそのままリモートとローカルに展開する
 alias -g LR='`git branch -a | peco --query "remotes/ " --prompt "GIT REMOTE BRANCH>" | head -n 1 | sed "s/^\*\s*//" | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`'
 
 # pecoによるインタラクティブな絞り込み
