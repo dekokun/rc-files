@@ -18,6 +18,16 @@
 		while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
 		curl "http://gitignore.io/api/$s"; }; f"
 	c = commit -v
+	o = checkout
+	co = checkout
+	p = pull
+	pu = push
+	cob = checkout -b
+	l = log --color --decorate
+	d = diff --color-words
+	s = status --short --branch
+	dc = diff --color-words --cached
+	a = add
 [credential]
 	helper = osxkeychain
 [push]
