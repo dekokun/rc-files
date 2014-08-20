@@ -12,6 +12,7 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " レジスタとclipboardの同期
+nnoremap yy "*yy
 nnoremap y "*y
 vnoremap y "*y
 nnoremap x "*x
