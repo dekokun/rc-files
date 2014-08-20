@@ -51,15 +51,7 @@ alias h='history -E -32'
 alias vizsh='vi ~/.zshrc; source ~/.zshrc'
 alias vivimrc='vi ~/.vimrc'
 alias viemacs='vi ~/.emacs'
-alias gs='git status --short --branch $@'
-alias gb='git branch'
 # alias ga='git add'
-alias gc='git commit'
-alias gC='git commit --amend'
-alias gco='git checkout'
-alias gd='git diff --color-words $@'
-alias gD='git diff --cached'
-alias gl='git log'
 alias r=rails
 alias t=todo
 

@@ -28,6 +28,7 @@
 	s = status --short --branch
 	dc = diff --color-words --cached
 	a = add
+	b = branch
 [credential]
 	helper = osxkeychain
 [push]
