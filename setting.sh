@@ -3,6 +3,10 @@ ln -s ~/rc/.zshenv ~/.zshenv
 ln -s ~/rc/.zshrc ~/.zshrc
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
+# gitの設定
+ln -s ~/rc/.gitconfig ~/.gitconfig
+touch ~/.gitconfig.local
+
 # vimperatorの設定
 git clone https://github.com/dekokun/vimperator-setting.git ~/.vimperator
 ln -s ~/.vimperator/.vimperatorrc ~/.vimperatorrc

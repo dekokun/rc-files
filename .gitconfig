@@ -10,16 +10,17 @@
 	diff = auto
 	status = auto
 	branch = auto
+[merge]
+	conflictstyle = diff3
 [alias]
 	graph = log --oneline --decorate --graph --color
 	ignore = !"f() { local s=$1; shift; \
 		while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
 		curl "http://gitignore.io/api/$s"; }; f"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	c = commit -v
+[credential]
+	helper = osxkeychain
 [push]
 	default = simple
-
-[merge]
-	conflictstyle = diff3
+[include]
+	path = .gitconfig.local
