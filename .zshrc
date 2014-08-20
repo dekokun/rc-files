@@ -46,15 +46,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -lh'
 alias vi='vim'
-alias em='emacs'
 alias h='history -E -32'
-alias vizsh='vi ~/.zshrc; source ~/.zshrc'
-alias vivimrc='vi ~/.vimrc'
-alias viemacs='vi ~/.emacs'
-# alias ga='git add'
-alias r=rails
-alias t=todo
-
 
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'
@@ -76,19 +68,6 @@ if exists peco; then
 
     zle -N peco_select_history
     bindkey '^R' peco_select_history
-
-    function peco-kill-process () {
-        ps -ef | peco | awk '{ print $2 }' | xargs kill
-        zle clear-screen
-    }
-    zle -N peco-kill-process
-    bindkey '^xk' peco-kill-process
-
-    function peco-checkout-branches () {
-        git checkout $(git branch | peco)
-    }
-    zle -N peco-checkout-branches
-    bindkey '^xb' peco-checkout-branches
 
     function peco-diff-file () {
     git diff $(git status --short | awk '{print $2}' | peco)
