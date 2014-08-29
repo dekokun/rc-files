@@ -53,7 +53,7 @@ alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s
 # git checkout -b LR などと使う。リモートブランチを絞り込んでそのままリモートとローカルに展開する
 alias -g LR='`git branch -a | peco --query "remotes/ " --prompt "GIT REMOTE BRANCH>" | head -n 1 | sed "s/^\*\s*//" | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`'
 # git diff DF や git add DF などと使う。差分の存在するファイルの絞込
-alias -g DF='`git status --short |  peco | cut -d " " -f 3`'
+alias -g DF='`git status --short |  peco | sed -e "s/  / /" | cut -d " " -f 2`'
 # git push origin master を楽しよう
 alias -g O='origin'
 alias -g M='master'
