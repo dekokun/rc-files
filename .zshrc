@@ -57,6 +57,8 @@ alias -g DF='`git status --short |  peco | cut -d " " -f 3`'
 # git push origin master を楽しよう
 alias -g O='origin'
 alias -g M='master'
+alias -g LS='`git ls-files | peco`'
+alias -g CURRENT='`git rev-parse --abbrev-ref HEAD`'
 
 # pecoによるインタラクティブな絞り込み
 function exists { which $1 &> /dev/null }
