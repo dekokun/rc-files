@@ -1,3 +1,7 @@
+## bashrc
+ln -s ~/rc/.bashrc ~/.bashrc
+ln -s ~/rc/.bash_profile ~/.bash_profile
+
 # zshの設定
 ln -s ~/rc/.zshenv ~/.zshenv
 ln -s ~/rc/.zshrc ~/.zshrc
