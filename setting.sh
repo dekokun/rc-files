@@ -1,3 +1,6 @@
+# homebrew
+`dirname $0`/homebrew.sh
+
 ## bashrc
 ln -s ~/rc/.bashrc ~/.bashrc
 ln -s ~/rc/.bash_profile ~/.bash_profile
