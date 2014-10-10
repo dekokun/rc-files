@@ -100,7 +100,5 @@ bindkey "^N" history-beginning-search-forward-end
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# rbevnの設定
+eval "$(rbenv init - zsh)"

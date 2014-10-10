@@ -18,6 +18,8 @@ brew install php55
 brew install caskroom/cask/brew-cask
 brew install reattach-to-user-namespace
 brew install htop
+brew install rbenv
+brew install ruby-build
 
 brew cask install google-chrome
 brew cask install firefox

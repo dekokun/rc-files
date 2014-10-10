@@ -52,3 +52,8 @@ fi
 
 # intellijIDEAの設定
 ln -s ~/rc/.ideavimrc ~/.ideavimrc
+
+# Ruby系セッティング
+# rbenvはhomebrewがいれている前提
+rbenv install 2.1.3
+rbenv global 2.1.3
