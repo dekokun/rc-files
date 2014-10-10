@@ -13,6 +13,8 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # gitの設定
 ln -s ~/rc/.gitconfig ~/.gitconfig
 touch ~/.gitconfig.local
+ln -s ~/rc/.gitignore_global ~/.gitignore_global
+ln -s ~/rc/.gitattributes_global ~/.gitattributes_global
 
 # vimperatorの設定
 git clone https://github.com/dekokun/vimperator-setting.git ~/.vimperator
