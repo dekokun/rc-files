@@ -17,6 +17,7 @@ brew install mysql
 brew install php55
 brew install caskroom/cask/brew-cask
 brew install reattach-to-user-namespace
+brew install htop
 
 brew cask install google-chrome
 brew cask install firefox
@@ -25,3 +26,7 @@ brew cask install dropbox
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install intellij-idea
+brew cask install karabiner
+brew cask install YoruFukurou
+brew cask install Dash
+brew cask install Evernote
