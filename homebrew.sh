@@ -20,6 +20,8 @@ brew install reattach-to-user-namespace
 brew install htop
 brew install rbenv
 brew install ruby-build
+brew install nodebrew
+brew install composer
 
 brew cask install google-chrome
 brew cask install firefox
@@ -32,3 +34,7 @@ brew cask install karabiner
 brew cask install YoruFukurou
 brew cask install Dash
 brew cask install Evernote
+brew cask install alfred
+brew cask install hipchat
+
+brew cask alfred link
