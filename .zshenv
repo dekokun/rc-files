@@ -14,3 +14,4 @@ fi
 export PATH=/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/.nodebrew/current/bin:$PATH
