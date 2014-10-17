@@ -57,3 +57,4 @@ ln -s ~/rc/.ideavimrc ~/.ideavimrc
 # rbenvはhomebrewがいれている前提
 rbenv install 2.1.3
 rbenv global 2.1.3
+gem install bundler
