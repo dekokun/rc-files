@@ -9,6 +9,7 @@ ln -s ~/rc/.bash_profile ~/.bash_profile
 ln -s ~/rc/.zshenv ~/.zshenv
 ln -s ~/rc/.zshrc ~/.zshrc
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+(cd ~/.oh-my-zsh/custom/plugins && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git)
 
 # gitの設定
 ln -s ~/rc/.gitconfig ~/.gitconfig
