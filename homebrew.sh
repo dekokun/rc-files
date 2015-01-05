@@ -22,6 +22,8 @@ brew install rbenv
 brew install ruby-build
 brew install nodebrew
 brew install composer
+brew tap peco/peco
+brew install peco
 
 brew cask install google-chrome
 brew cask install firefox
