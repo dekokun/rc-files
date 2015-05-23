@@ -47,7 +47,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -lh'
 alias vi='vim'
-alias h='history -E -32'
 
 # git checkout B  などと使う。ブランチの絞込
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
