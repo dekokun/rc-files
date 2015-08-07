@@ -42,4 +42,8 @@ brew cask install Evernote
 brew cask install alfred
 brew cask install hipchat
 
+brew cask install limechat
+
+brew cask install google-japanese-ime
+
 brew cask alfred link
