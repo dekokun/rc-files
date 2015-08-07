@@ -64,3 +64,8 @@ gem install bundler
 # nodebrewはhomebrewがいれている前提
 nodebrew install stable
 nodebrew use stable
+
+mkdir tools
+git clone https://github.com/dennishafemann/tmux-cssh.git ~/tools/tmux-cssh
+ln -s ~/tools/tmux-cssh/tmux-cssh ~/bin/tssh
+
