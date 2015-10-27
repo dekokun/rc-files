@@ -27,6 +27,8 @@ brew install composer
 brew tap peco/peco
 brew install peco
 brew install jq
+brew tap motemen/ghq
+brew install ghq
 
 brew cask install google-chrome
 brew cask install firefox
