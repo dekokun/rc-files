@@ -102,5 +102,11 @@ bindkey "^N" history-beginning-search-forward-end
 # 各環境依存の設定読み込み
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
 # rbevnの設定
 eval "$(rbenv init - zsh)"

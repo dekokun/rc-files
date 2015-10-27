@@ -54,6 +54,7 @@ fi
 # intellijIDEAの設定
 ln -s ~/rc/.ideavimrc ~/.ideavimrc
 
+git clone https://github.com/riywo/anyenv ~/.anyenv
 # Ruby系セッティング
 # rbenvはhomebrewがいれている前提
 rbenv install 2.1.3
