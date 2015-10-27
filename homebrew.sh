@@ -18,7 +18,6 @@ brew install php55
 brew install caskroom/cask/brew-cask
 brew install reattach-to-user-namespace
 brew install htop
-brew install rbenv
 # gem installした際にrehashしなくてすむようにする
 brew install rbenv-gem-rehash
 brew install ruby-build

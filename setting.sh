@@ -54,9 +54,13 @@ fi
 # intellijIDEAの設定
 ln -s ~/rc/.ideavimrc ~/.ideavimrc
 
+# 各種env系
 git clone https://github.com/riywo/anyenv ~/.anyenv
+anyenv install plenv
+anyenv install rbenv
+anyenv install ndenv
+
 # Ruby系セッティング
-# rbenvはhomebrewがいれている前提
 rbenv install 2.1.3
 rbenv global 2.1.3
 gem install bundler
