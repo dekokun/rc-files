@@ -65,10 +65,9 @@ rbenv install 2.1.3
 rbenv global 2.1.3
 gem install bundler
 
-## Node系セッティング
-# nodebrewはhomebrewがいれている前提
-nodebrew install stable
-nodebrew use stable
+# Node系セッティング
+# 適当に新しいものを入れておく
+ndenv install v0.12.7
 
 mkdir tools
 git clone https://github.com/dennishafemann/tmux-cssh.git ~/tools/tmux-cssh

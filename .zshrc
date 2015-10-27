@@ -108,5 +108,9 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init -)"
 fi
 
+
 # rbevnの設定
 eval "$(rbenv init - zsh)"
+eval "$(plenv init - zsh)"
+eval "$(ndenv init - zsh)"
+
