@@ -36,3 +36,5 @@
 	default = simple
 [include]
 	path = .gitconfig.local
+[ghq]
+	root = ~/src
