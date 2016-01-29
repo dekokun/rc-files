@@ -29,6 +29,7 @@
 	dc = diff --color-words --cached
 	a = add
 	b = branch
+	find = !"git ls-files */$1*"
 [credential]
 	helper = osxkeychain
 [push]
