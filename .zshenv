@@ -15,3 +15,4 @@ export PATH=/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin:$HOME/.composer
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export REPORTTIME=1
