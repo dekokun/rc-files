@@ -98,7 +98,7 @@ if exists peco; then
         zle clear-screen
     }
     zle -N peco-git-recent-branches
-    bindkey '^xb' peco-git-recent-branches
+    bindkey '^b' peco-git-recent-branches
 
     function peco-git-recent-all-branches () {
         local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads refs/remotes | \
@@ -141,4 +141,6 @@ fi
 eval "$(rbenv init - zsh)"
 eval "$(plenv init - zsh)"
 eval "$(ndenv init - zsh)"
+
+export XDG_DATA_HOME=/usr/local/share
 
