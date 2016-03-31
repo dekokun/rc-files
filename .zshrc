@@ -9,6 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="crunch"
 
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -84,6 +85,33 @@ if exists peco; then
     }
     zle -N peco-diff-file
     bindkey '^xd' peco-diff-file
+
+    # git系
+    function peco-git-recent-branches () {
+        local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
+            perl -pne 's{^refs/heads/}{}' | \
+            peco)
+        if [ -n "$selected_branch" ]; then
+            BUFFER="git checkout ${selected_branch}"
+            zle accept-line
+        fi
+        zle clear-screen
+    }
+    zle -N peco-git-recent-branches
+    bindkey '^xb' peco-git-recent-branches
+
+    function peco-git-recent-all-branches () {
+        local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads refs/remotes | \
+            perl -pne 's{^refs/(heads|remotes)/}{}' | \
+            peco)
+        if [ -n "$selected_branch" ]; then
+            BUFFER="git checkout -t ${selected_branch}"
+            zle accept-line
+        fi
+        zle clear-screen
+    }
+    zle -N peco-git-recent-all-branches
+    bindkey '^xa' peco-git-recent-all-branches
 fi
 
 
