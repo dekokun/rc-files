@@ -27,8 +27,9 @@
 	d = diff --color-words
 	s = status --short --branch
 	dc = diff --color-words --cached
-	a = add
+	a = padd
 	b = branch
+	r = preset-head
 	find = !"git ls-files */$1*"
 [credential]
 	helper = osxkeychain
