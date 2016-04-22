@@ -28,6 +28,7 @@
 	s = status --short --branch
 	dc = diff --color-words --cached
 	a = padd
+	ap = add -p
 	b = branch
 	r = preset-head
 	find = !"git ls-files */$1*"
