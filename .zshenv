@@ -12,7 +12,7 @@ fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 export PATH=/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin:$HOME/.composer/vendor/bin
-export GOPATH=~/.go
+export GOPATH=~
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export REPORTTIME=1
