@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# 複数引数を与えられた場合は一発コマンド実行だと認定して普通にssh実行。雑。
+if [ $# -ne 1 ]; then
+    ssh  ${@+"$@"}
+    exit
+fi
+
+SSHOPTION=$1
+# FILENAME=$HOME/sshlog/${SSHOPTION}-$(date +%Y-%m-%d-%H-%S)
+DIRECTORY=$HOME/sshlog/$(date +%Y-%m-%d)
+if [ ! -d $DIRECTORY ]; then
+    mkdir -p $DIRECTORY
+fi
+FILENAME=$DIRECTORY/${SSHOPTION}-$(date +%Y-%m-%d-%H-%S).log
+script -aq ${FILENAME} ssh $SSHOPTION

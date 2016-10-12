@@ -50,6 +50,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -lh'
 alias vi='vim'
+# sshのlogging
+alias ssh=lssh
+
 
 # git checkout B  などと使う。ブランチの絞込
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
@@ -156,3 +159,9 @@ eval "$(ndenv init - zsh)"
 
 export XDG_DATA_HOME=/usr/local/share
 
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/dekokun/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/dekokun/google-cloud-sdk/completion.zsh.inc'
