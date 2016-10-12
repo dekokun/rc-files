@@ -112,6 +112,18 @@ if exists peco; then
     }
     zle -N peco-git-recent-all-branches
     bindkey '^xa' peco-git-recent-all-branches
+
+    # pecoでghqから絞込
+    function peco-src () {
+      local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+      if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+      fi
+      zle clear-screen
+    }
+    zle -N peco-src
+    bindkey '^]' peco-src
 fi
 
 
