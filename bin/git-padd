@@ -1,4 +1,5 @@
 SELECTED_FILE_TO_ADD="$(git status --porcelain | \
+                              # MMのもの(git add -pされたもの)も消えてしまう
                               sed '/^[A|UU|M|D]/d' | \
                               peco | \
                               awk -F ' ' '{print $NF}')"
