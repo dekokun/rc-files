@@ -6,10 +6,12 @@ if [ -n "$SELECTED_FILE_TO_ADD" ]; then
   search_root=`git rev-parse --show-toplevel`
   files=`echo "$SELECTED_FILE_TO_ADD" | tr '\n' ' '`
   `cd ${search_root} && git reset HEAD ${files}`
+  echo "reset HEAD files:"
+  for line in $SELECTED_FILE_TO_ADD
+  do
+    echo $line
+  done
+else
+  echo nothing reseted
 fi
 
-echo "reset HEAD:"
-for line in $SELECTED_FILE_TO_ADD
-do
-  echo $line
-done
