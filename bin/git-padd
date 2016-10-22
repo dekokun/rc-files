@@ -11,6 +11,6 @@ if [ -n "$SELECTED_FILE_TO_ADD" ]; then
     echo $line
   done
 else
-  echo change file nothing
+  echo nothing added
 fi
 
