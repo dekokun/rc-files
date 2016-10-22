@@ -1,6 +1,4 @@
-SELECTED_FILE_TO_ADD="$(git status --porcelain | \
-                              # MMのもの(git add -pされたもの)も消えてしまう
-                              sed '/^[A|UU|M|D]/d' | \
+SELECTED_FILE_TO_ADD="$(git status --porcelain -u | \
                               peco | \
                               awk -F ' ' '{print $NF}')"
 if [ -n "$SELECTED_FILE_TO_ADD" ]; then
@@ -15,4 +13,3 @@ if [ -n "$SELECTED_FILE_TO_ADD" ]; then
 else
   echo nothing added
 fi
-
