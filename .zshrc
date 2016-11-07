@@ -129,6 +129,10 @@ if exists peco; then
     bindkey '^]' peco-src
 fi
 
+# zshのbuiltin関数のman確認
+function manb() {
+  man -P "less -p'^       $1 '" zshbuiltins
+}
 
 # history設定
 HISTFILE=~/.zsh_history
