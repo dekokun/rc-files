@@ -28,6 +28,7 @@ brew install peco
 brew install jq
 brew tap motemen/ghq
 brew install ghq
+brew install shellcheck
 
 brew cask install google-chrome
 brew cask install firefox
