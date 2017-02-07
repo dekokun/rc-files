@@ -17,9 +17,10 @@ touch ~/.gitconfig.local
 ln -s ~/rc/.gitignore_global ~/.gitignore_global
 ln -s ~/rc/.gitattributes_global ~/.gitattributes_global
 
-# vimperatorの設定
-git clone https://github.com/dekokun/vimperator-setting.git ~/.vimperator
-ln -s ~/.vimperator/.vimperatorrc ~/.vimperatorrc
+# vimfxの設定
+# コレ以外にfirefoxのextensions.VimFx.config_file_directoryを設定する必要があるのに注意
+mkdir ~/.config/
+git clone git@github.com:dekokun/vimfx-setting.git ~/.config/vimfx
 
 # vimの設定
 git clone https://github.com/dekokun/vimruntime.git ~/.vim
