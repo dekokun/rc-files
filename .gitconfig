@@ -32,6 +32,7 @@
 	b = branch
 	r = preset-head
 	find = !"git ls-files */$1*"
+	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...$2 | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 [credential]
 	helper = osxkeychain
 [push]
