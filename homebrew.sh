@@ -29,6 +29,9 @@ brew install jq
 brew tap motemen/ghq
 brew install ghq
 brew install shellcheck
+brew tap greymd/tools
+brew install tmux-xpanes
+
 
 brew cask install google-chrome
 brew cask install firefox
