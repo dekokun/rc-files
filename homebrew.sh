@@ -2,7 +2,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install zsh
 brew install tmux
 brew install git
-brew install vim
+brew install vim --with-python3 --with-lua
 brew install gnu-sed
 brew install autojump
 brew install composer
