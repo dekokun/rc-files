@@ -6,6 +6,7 @@
 	excludesfile = ~/.gitignore_global
 	quotepath = false
 	attributesfile = ~/.gitattributes_global
+    pager = LESS=R less
 [color]
 	diff = auto
 	status = auto
