@@ -32,7 +32,8 @@ brew install shellcheck
 brew tap greymd/tools
 brew install tmux-xpanes
 brew install ag
-
+brew install fzf
+brew install fasd
 
 brew cask install google-chrome
 brew cask install firefox
