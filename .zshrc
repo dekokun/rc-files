@@ -172,3 +172,5 @@ source '/Users/dekokun/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
 source '/Users/dekokun/google-cloud-sdk/completion.zsh.inc'
+
+source /usr/local/bin/aws_zsh_completer.sh
