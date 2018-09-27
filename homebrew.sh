@@ -34,6 +34,7 @@ brew install tmux-xpanes
 brew install ag
 brew install fzf
 brew install fasd
+brew install terminal-notifier
 
 brew cask install google-chrome
 brew cask install firefox

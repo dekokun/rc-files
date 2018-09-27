@@ -57,6 +57,7 @@ alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
 # sshのlogging
 alias ssh=lssh
+alias noti='terminal-notifier -message "コマンド完了"'
 
 
 # git checkout B  などと使う。ブランチの絞込
