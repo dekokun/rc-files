@@ -62,86 +62,38 @@ alias mv='mv -i'
 alias ll='ls -lh'
 alias vi='vim'
 alias j='fasd_cd -d'
-alias jj='fasd_cd -d -i'
 # sshのlogging
 alias ssh=lssh
 alias noti='terminal-notifier -message "コマンド完了"'
 
-
-# git checkout B  などと使う。ブランチの絞込
-alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
-# git checkout -b LR などと使う。リモートブランチを絞り込んでそのままリモートとローカルに展開する
-alias -g LR='`git branch -a | peco --query "remotes/ " --prompt "GIT REMOTE BRANCH>" | head -n 1 | sed "s/^\*\s*//" | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`'
-# git diff DF や git add DF などと使う。差分の存在するファイルの絞込
-alias -g DF='`git status --short |  peco | sed -e "s/  / /" | cut -d " " -f 3`'
 # git push origin master を楽しよう
 alias -g O='origin'
 alias -g M='master'
-alias -g LS='`git ls-files | peco`'
 alias -g CURRENT='`git rev-parse --abbrev-ref HEAD`'
 
-# pecoによるインタラクティブな絞り込み
-function exists { which $1 &> /dev/null }
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+autojump-fzf() {
+  if [[ -z "$*" ]]; then
+    cd "$(fasd_cd -d | fzf -1 -0 --no-sort --tac +m | sed 's/^[0-9,.]* *//')"
+  else
+    cd "$(fasd_cd -d | fzf --query="$*" -1 -0 --no-sort --tac +m | sed 's/^[0-9,.]* *//')"
+  fi
+  zle accept-line
+}
+zle -N autojump-fzf
+bindkey '^j' autojump-fzf
 
-if exists peco; then
-    function peco_select_history() {
-        local tac
-        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-        BUFFER=$(fc -l -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
-        CURSOR=$#BUFFER         # move cursor
-        zle -R -c               # refresh
-    }
-
-    zle -N peco_select_history
-    bindkey '^R' peco_select_history
-
-    function peco-diff-file () {
-    git diff $(git status --short | awk '{print $2}' | peco)
-    }
-    zle -N peco-diff-file
-    bindkey '^xd' peco-diff-file
-
-    # git系
-    function peco-git-recent-branches () {
-        local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads | \
-            perl -pne 's{^refs/heads/}{}' | \
-            peco)
-        if [ -n "$selected_branch" ]; then
-            BUFFER="git checkout ${selected_branch}"
-            zle accept-line
-        fi
-        zle clear-screen
-    }
-    zle -N peco-git-recent-branches
-    bindkey '^xb' peco-git-recent-branches
-
-    function peco-git-recent-all-branches () {
-        local selected_branch=$(git for-each-ref --format='%(refname)' --sort=-committerdate refs/heads refs/remotes | \
-            perl -pne 's{^refs/(heads|remotes)/}{}' | \
-            peco)
-        if [ -n "$selected_branch" ]; then
-            BUFFER="git checkout -t ${selected_branch}"
-            zle accept-line
-        fi
-        zle clear-screen
-    }
-    zle -N peco-git-recent-all-branches
-    bindkey '^xa' peco-git-recent-all-branches
-
-    # pecoでghqから絞込
-    function peco-src () {
-      local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-      if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-      fi
-      zle clear-screen
-    }
-    zle -N peco-src
-    bindkey '^]' peco-src
-fi
+# ghqから絞込
+function ghq-src () {
+  local selected_dir=$(ghq list -p | fzf +m)
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N ghq-src
+bindkey '^]' ghq-src
 
 # zshのbuiltin関数のman確認
 function manb() {
@@ -191,3 +143,5 @@ source $HOME/.cargo/env
 
 source /usr/local/bin/aws_zsh_completer.sh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

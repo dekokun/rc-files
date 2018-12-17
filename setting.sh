@@ -46,11 +46,6 @@ else
   echo 'please install autojump with homebrew'
 fi
 
-# peco
-(
-    brew install go
-    go get peco
-)
 # for vim completor
 # https://github.com/maralla/completor.vim
 go get -u github.com/nsf/gocode

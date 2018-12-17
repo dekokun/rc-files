@@ -23,8 +23,7 @@ brew install rbenv-gem-rehash
 brew install ruby-build
 brew install nodebrew
 brew install composer
-brew tap peco/peco
-brew install peco
+brew install go
 brew install jq
 brew tap motemen/ghq
 brew install ghq
