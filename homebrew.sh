@@ -55,3 +55,4 @@ brew cask install limechat
 brew cask install google-japanese-ime
 
 brew cask alfred link
+brew cask install alacritty
