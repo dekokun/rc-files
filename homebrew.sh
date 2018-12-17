@@ -35,6 +35,7 @@ brew install ag
 brew install fzf
 brew install fasd
 brew install terminal-notifier
+brew install direnv
 
 brew cask install google-chrome
 brew cask install firefox
