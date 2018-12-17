@@ -1,4 +1,12 @@
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+# launch tmux
+tmux ls > /dev/null
+if [ $? -eq 1 -a -z "$TMUX" ]; then
+    exec tmux
+elif [ -z "$TMUX" ] ; then
+    exec tmux attach
+else
+    echo "sessions should be nested with care."
+fi
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
