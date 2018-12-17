@@ -174,6 +174,7 @@ fi
 eval "$(rbenv init - zsh)"
 eval "$(plenv init - zsh)"
 eval "$(ndenv init - zsh)"
+eval "$(direnv hook zsh)"
 
 export XDG_DATA_HOME=/usr/local/share
 
@@ -184,4 +185,9 @@ source '/Users/dekokun/google-cloud-sdk/path.zsh.inc'
 # The next line enables shell command completion for gcloud.
 source '/Users/dekokun/google-cloud-sdk/completion.zsh.inc'
 
+export PATH="$HOME/.plenv/shims:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
+source $HOME/.cargo/env
+
 source /usr/local/bin/aws_zsh_completer.sh
+fpath+=${ZDOTDIR:-~}/.zsh_functions
