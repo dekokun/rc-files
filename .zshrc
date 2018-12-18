@@ -71,7 +71,7 @@ alias -g O='origin'
 alias -g M='master'
 alias -g CURRENT='`git rev-parse --abbrev-ref HEAD`'
 
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --exact'
 autojump-fzf() {
   if [[ -z "$*" ]]; then
     cd "$(fasd_cd -d | fzf -1 -0 --no-sort --tac +m | sed 's/^[0-9,.]* *//')"
