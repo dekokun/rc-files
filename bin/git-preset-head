@@ -1,6 +1,6 @@
 SELECTED_FILE_TO_ADD="$(git status --porcelain | \
                               sed '/^[??|^ ]/d' | \
-                              fzf -m | \
+                              fzf -m --exit-0| \
                               awk -F ' ' '{print $NF}')"
 if [ -n "$SELECTED_FILE_TO_ADD" ]; then
   search_root=`git rev-parse --show-toplevel`
