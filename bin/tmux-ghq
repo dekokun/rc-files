@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Put followings your .tmux.conf
+#
+#   bind ^T run-shell tmux-ghq
+#
+
+set -e
+fzfcmd="fzf-tmux -d${FZF_TMUX_HEIGHT:-40%} -e +s"
+
+tmux start-server
+selected=$( (tmux list-sessions; ghq list --full-path) | $fzfcmd) && true
+status=$?
+if [ $status -eq 0 ]; then
+  if echo "$selected" | grep ': ' > /dev/null; then
+    session_name=$(echo "$selected" | cut -f 1 -d ':')
+  else
+    repo=$(basename "$selected")
+    owner=$(basename "$(dirname "$selected")")
+    session_name=$(echo "${owner}/${repo}" | sed -e 's/[^A-Za-z0-9_/-]/_/g')
+
+    tmux new-session -d -c "$selected" -s "$session_name" 2> /dev/null || true
+  fi
+
+  if [[ -z "$TMUX" ]]; then
+    exec tmux attach-session -t "$session_name"
+  else
+    tmux switch-client -t "$session_name"
+  fi
+fi
