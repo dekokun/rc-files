@@ -1,7 +1,7 @@
 # launch tmux
 tmux ls > /dev/null
 if [ $? -eq 1 -a -z "$TMUX" ]; then
-    exec tmux
+    exec tmux new -s "default session"
 elif [ -z "$TMUX" ] ; then
     exec tmux attach
 else
