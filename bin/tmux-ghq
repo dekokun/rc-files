@@ -6,7 +6,7 @@
 #
 
 set -e
-fzfcmd="fzf-tmux -d${FZF_TMUX_HEIGHT:-40%} -e +s"
+fzfcmd="fzf-tmux -d${FZF_TMUX_HEIGHT:-40%} -e +s --reverse"
 
 tmux start-server
 selected=$( (tmux list-sessions; ghq list --full-path) | $fzfcmd) && true
