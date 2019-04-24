@@ -12,7 +12,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 (cd ~/.oh-my-zsh/custom/plugins && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git)
 
 # gitの設定
-ln -s ~/rc/.gitconfig ~/.gitconfig
+ln -s ~/rc/gitconfig ~/.gitconfig
 touch ~/.gitconfig.local
 ln -s ~/rc/.gitignore_global ~/.gitignore_global
 ln -s ~/rc/.gitattributes_global ~/.gitattributes_global

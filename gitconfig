@@ -1,0 +1,46 @@
+[user]
+	name = dekokun
+	email = shintaro.kurachi@gmail.com
+[core]
+	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore_global
+	quotepath = false
+	attributesfile = ~/.gitattributes_global
+    pager = LESS=R less
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[merge]
+	conflictstyle = diff3
+[alias]
+	graph = log --oneline --decorate --graph --color
+	ignore = !"f() { local s=$1; shift; \
+		while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
+		curl "http://gitignore.io/api/$s"; }; f"
+	c = commit -v
+	o = checkout
+	co = checkout
+	pl = pull
+	ps = push
+	cob = checkout -b
+	l = log --color --decorate
+	d = diff --color-words
+	s = status --short --branch
+	dc = diff --color-words --cached
+	a = padd
+	ap = add -p
+	b = branch
+	r = preset-head
+	find = !"git ls-files */$1*"
+	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...$2 | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
+	pr-fetch = "!f(){ git fetch origin pull/$1/head:origin/pr/$1; };f"
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[include]
+	path = .gitconfig.local
+[ghq]
+	root = ~/src
+
