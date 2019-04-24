@@ -87,19 +87,19 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: Ricty
+    family: Ricty Discord
     # The `style` can be specified to pick a specific face.
     # 1style: Regular
 
   # Bold font face
   bold:
-    family: RIcty
+    family: Ricty Discord
     # The `style` can be specified to pick a specific face.
     # style: Bold
 
   # Italic font face
   italic:
-    family: Ricty
+    family: Ricty Discord
     # The `style` can be specified to pick a specific face.
     # style: Italic
 
