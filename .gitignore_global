@@ -3,3 +3,4 @@ tags
 .svn
 .idea/
 *.iml
+.vscode/
