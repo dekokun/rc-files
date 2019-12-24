@@ -17,10 +17,3 @@ export REPORTTIME=1
 # lessを便利に。参照： http://qiita.com/delphinus/items/b04752bb5b64e6cc4ea9 
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 export EDITOR=vim
-
-# prezto
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
-fi
-

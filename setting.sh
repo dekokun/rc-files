@@ -75,6 +75,3 @@ ln -s ~/tools/tmux-cssh/tmux-cssh ~/bin/tssh
 
 # alacritty
 ln -s ~/rc/alacritty.yml ~/.config/alacritty/alacritty.yml
-
-# prezto + zplug
-ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto $HOME/.zprezto
