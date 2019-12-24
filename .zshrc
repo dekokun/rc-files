@@ -62,6 +62,7 @@ alias mv='mv -i'
 alias ll='ls -lh'
 alias vi='vim'
 alias j='fasd_cd -d'
+alias jq='gojq'
 # sshのlogging
 alias ssh=lssh
 alias noti='terminal-notifier -message "コマンド完了"'
