@@ -8,19 +8,10 @@ else
     echo "sessions should be nested with care."
 fi
 
+# promptはstarshipに任せる
+eval "$(starship init zsh)"
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="random"
-ZSH_THEME_RANDOM_CANDIDATES=(
-  "dallas"
-  "crunch"
-)
-
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -47,7 +38,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git brew zsh-syntax-highlighting fasd)
 
 source $ZSH/oh-my-zsh.sh
-# export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
 
 # Customize to your needs...
 #
@@ -59,11 +49,15 @@ export LSCOLORS=Gxfxbxdxcxegedabagacad
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
 # alias
+alias g='git'
 alias o='open'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ll='ls -lh'
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa --color=auto'
 alias vi='vim'
 alias j='fasd_cd -d'
 alias jq='gojq'
