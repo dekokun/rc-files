@@ -38,6 +38,7 @@ brew install direnv
 brew install itchyny/tap/gojq
 brew install starship
 brew install exa
+brew install nodenv
 
 brew cask install google-chrome
 brew cask install firefox

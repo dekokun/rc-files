@@ -59,16 +59,11 @@ ln -s ~/rc/.ideavimrc ~/.ideavimrc
 git clone https://github.com/riywo/anyenv ~/.anyenv
 anyenv install plenv
 anyenv install rbenv
-anyenv install ndenv
 
 # Ruby系セッティング
 rbenv install 2.1.3
 rbenv global 2.1.3
 gem install bundler
-
-# Node系セッティング
-# 適当に新しいものを入れておく
-ndenv install v0.12.7
 
 mkdir tools
 git clone https://github.com/dennishafemann/tmux-cssh.git ~/tools/tmux-cssh
