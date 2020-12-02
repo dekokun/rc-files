@@ -17,6 +17,7 @@ ln -s ~/rc/gitconfig ~/.gitconfig
 touch ~/.gitconfig.local
 ln -s ~/rc/.gitignore_global ~/.gitignore_global
 ln -s ~/rc/.gitattributes_global ~/.gitattributes_global
+ln -s ~/rc/githooks ~/.git/hooks
 
 # vimfxの設定
 # コレ以外にfirefoxのextensions.VimFx.config_file_directoryを設定する必要があるのに注意
