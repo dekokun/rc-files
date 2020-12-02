@@ -139,8 +139,8 @@ fi
 # rbevnの設定
 eval "$(rbenv init - zsh)"
 eval "$(plenv init - zsh)"
-eval "$(ndenv init - zsh)"
 eval "$(direnv hook zsh)"
+eval "$(nodenv init -)"
 
 export XDG_DATA_HOME=/usr/local/share
 
