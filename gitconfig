@@ -2,7 +2,7 @@
 	name = dekokun
 	email = shintaro.kurachi@gmail.com
 [core]
-	editor = /usr/bin/vim
+	editor = /usr/local/bin/vim
 	excludesfile = ~/.gitignore_global
 	quotepath = false
 	attributesfile = ~/.gitattributes_global
