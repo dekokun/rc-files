@@ -39,7 +39,7 @@
 [credential]
 	helper = osxkeychain
 [push]
-	default = simple
+	default = nothing
 [include]
 	path = .gitconfig.local
 [ghq]
