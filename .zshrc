@@ -159,3 +159,8 @@ source /usr/local/bin/aws_zsh_completer.sh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
+# if (which zprof > /dev/null) ;then
+#   zprof | less
+# fi

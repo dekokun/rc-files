@@ -1,3 +1,6 @@
+# zprofを使う際にコメントを戻す。zprof使う場合は.zshrcも編集必要
+# zmodload zsh/zprof && zprof
+
 # 様々な設定を行う前に各種ツールの読み込み
 # nvm と指定されたバージョンの Node.js がインストール済みの場合だけ
 # 設定を有効にする
