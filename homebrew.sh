@@ -60,3 +60,6 @@ brew cask install google-japanese-ime
 
 brew cask alfred link
 brew cask install alacritty
+
+brew tap zkokaja/brewlet
+brew install --cask brewlet
