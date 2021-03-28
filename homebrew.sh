@@ -39,6 +39,7 @@ brew install itchyny/tap/gojq
 brew install starship
 brew install exa
 brew install nodenv
+brew install gh
 
 brew cask install google-chrome
 brew cask install firefox
