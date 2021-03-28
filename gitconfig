@@ -36,6 +36,7 @@
 	find = "!sh -c 'git ls-files | grep -i $1' -"
 	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...$2 | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 	pr-fetch = "!f(){ git fetch origin pull/$1/head:origin/pr/$1; };f"
+    tree = "!sh -c 'git ls-files | tree --fromfile=.'"
 [credential]
 	helper = osxkeychain
 [push]
