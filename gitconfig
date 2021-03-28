@@ -48,3 +48,5 @@
 
 [hub]
 	host = github.com
+[pull]
+	rebase = false
