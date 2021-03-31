@@ -305,8 +305,8 @@ mouse:
     #   - (macOS) open
     #   - (Linux) xdg-open
     #   - (Windows) explorer
-    # tmuxでmouse modeをonにしている関係で、shiftを押しながらじゃないとクリックできない
-    # なぜかは分からない。参考： https://github.com/alacritty/alacritty/issues/2297#issuecomment-481865555
+    # tmuxでmouse modeをonにしている関係で、shiftを押してマウスモードを解除しないとクリックできない
+    # 参考： https://github.com/alacritty/alacritty/issues/2297#issuecomment-481865555
     launcher:
       program: open
       args: []
