@@ -160,3 +160,6 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # if (which zprof > /dev/null) ;then
 #   zprof | less
 # fi
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
