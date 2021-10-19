@@ -30,6 +30,7 @@ alias ll='ls -lah'
 alias vi='vim'
 alias j='fasd_cd -d'
 alias jq='gojq'
+alias k=kubectl
 # sshのlogging
 alias ssh=lssh
 alias noti='terminal-notifier -message "コマンド完了"'
@@ -38,6 +39,10 @@ alias noti='terminal-notifier -message "コマンド完了"'
 alias -g O='origin'
 alias -g M='master'
 alias -g CURRENT='`git rev-parse --abbrev-ref HEAD`'
+
+autoload -Uz compinit
+compinit
+source <(kubectl completion zsh)
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --exact'
 autojump-fzf() {
