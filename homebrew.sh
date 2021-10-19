@@ -40,6 +40,7 @@ brew install starship
 brew install exa
 brew install nodenv
 brew install gh
+brew install git-delta
 
 brew cask install google-chrome
 brew cask install firefox
