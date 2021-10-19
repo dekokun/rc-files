@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# 複数引数を与えられた場合は一発コマンド実行だと認定して普通にssh実行。雑。
 if [ $# -ne 1 ]; then
-    ssh  ${@+"$@"}
-    exit
+    exec ssh  ${@+"$@"}
 fi
 
 SSHOPTION=$1
