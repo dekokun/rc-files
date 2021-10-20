@@ -34,7 +34,11 @@ alias noti='terminal-notifier -message "コマンド完了"'
 
 
 autoload -Uz compinit
-compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
 source <(kubectl completion zsh)
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --exact'
