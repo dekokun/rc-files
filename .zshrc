@@ -139,19 +139,12 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-source ~/.zplug/init.zsh
-zplug "momo-lab/zsh-abbrev-alias"
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-
-# Then, source plugins and add commands to $PATH
-zplug load --verbose
+source "${HOME}/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
+zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
+zinit load zsh-users/zsh-completions # 補完
 abbrev-alias -g O="origin"
 abbrev-alias -g M="master"
 abbrev-alias -ge CURRENT='$(git rev-parse --abbrev-ref HEAD)'
@@ -159,3 +152,4 @@ abbrev-alias -c g=git
 abbrev-alias -c k=kubectl
 abbrev-alias -c kx="kubectl ctx"
 abbrev-alias -c o=open
+
