@@ -19,8 +19,6 @@ export LSCOLORS=Gxfxbxdxcxegedabagacad
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
 # alias
-alias g='git'
-alias o='open'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -30,36 +28,10 @@ alias ll='ls -lah'
 alias vi='vim'
 alias j='fasd_cd -d'
 alias jq='gojq'
-alias k=kubectl
 # sshのlogging
 alias ssh=lssh
 alias noti='terminal-notifier -message "コマンド完了"'
 
-
-setopt extended_glob
-
-typeset -A abbreviations
-abbreviations=(
-  "O"    "origin"
-  "M"    "master"
-  "CURRENT" '`git rev-parse --abbrev-ref HEAD`'
-)
-
-magic-abbrev-expand() {
-    local MATCH
-    LBUFFER=${LBUFFER%%(#m)[_a-zA-Z0-9]#}
-    LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
-    zle self-insert
-}
-
-no-magic-abbrev-expand() {
-  LBUFFER+=' '
-}
-
-zle -N magic-abbrev-expand
-zle -N no-magic-abbrev-expand
-bindkey " " magic-abbrev-expand
-bindkey "^x " no-magic-abbrev-expand
 
 autoload -Uz compinit
 compinit
@@ -163,3 +135,23 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+source ~/.zplug/init.zsh
+zplug "momo-lab/zsh-abbrev-alias"
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+abbrev-alias -g O="origin"
+abbrev-alias -g M="master"
+abbrev-alias -ge CURRENT='$(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -c g=git
+abbrev-alias -c k=kubectl
+abbrev-alias -c kx="kubectl ctx"
+abbrev-alias -c o=open
