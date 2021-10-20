@@ -132,11 +132,6 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
-# if (which zprof > /dev/null) ;then
-#   zprof | less
-# fi
-
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 source "${HOME}/.zinit/bin/zinit.zsh"
@@ -152,4 +147,9 @@ abbrev-alias -c g=git
 abbrev-alias -c k=kubectl
 abbrev-alias -c kx="kubectl ctx"
 abbrev-alias -c o=open
+
+# zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
+# if (which zprof > /dev/null) ;then
+#   zprof | less
+# fi
 
