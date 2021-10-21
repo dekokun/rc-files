@@ -160,7 +160,7 @@ zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色
 zinit load zsh-users/zsh-completions # 補完
 abbrev-alias -g O="origin"
 abbrev-alias -g M="master"
-abbrev-alias -ge CURRENT='$(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -ge C='$(git rev-parse --abbrev-ref HEAD)'
 abbrev-alias -c g=git
 abbrev-alias -c k=kubectl
 abbrev-alias -c kx="kubectl ctx"
