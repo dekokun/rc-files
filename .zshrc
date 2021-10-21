@@ -39,7 +39,13 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-source <(kubectl completion zsh)
+# lazy load
+# source kubectl completion zsh is slow
+kubectl() {
+  unfunction "$0"
+  source <(kubectl completion zsh)
+  $0 "$@"
+}
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --exact'
 autojump-fzf() {
@@ -107,12 +113,24 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init -)"
 fi
 
-
-# rbevnの設定
-eval "$(rbenv init - zsh)"
-eval "$(plenv init - zsh)"
-eval "$(direnv hook zsh)"
-eval "$(nodenv init -)"
+# lazy load
+rbenv() {
+  unfunction "$0"
+  source <(rbenv init -)
+  $0 "$@"
+}
+plenv() {
+  unfunction "$0"
+  source <(plenv init -)
+  $0 "$@"
+}
+nodenv() {
+  unfunction "$0"
+  source <(nodenv init -)
+  $0 "$@"
+}
+# direnv is not slow
+source <(direnv hook zsh)
 
 export XDG_DATA_HOME=/usr/local/share
 
