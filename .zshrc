@@ -175,3 +175,4 @@ abbrev-alias -c o=open
 
 eval "$(fasd --init auto)"
 
+local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
