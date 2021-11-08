@@ -159,9 +159,14 @@ zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
 zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
 zinit load zsh-users/zsh-completions # 補完
 abbrev-alias -g O="origin"
-abbrev-alias -g M="master"
-abbrev-alias -ge C='$(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -g M='master'
+# abbrev-alias -ge C='$(git rev-parse --abbrev-ref HEAD)'
 abbrev-alias -c g=git
+abbrev-alias -c gc="git commit -m'"
+abbrev-alias -c ga="git padd"
+abbrev-alias -ce gps='git push origin $(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -ce gpl='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -c gco="git checkout"
 abbrev-alias -c k=kubectl
 abbrev-alias -c kx="kubectl ctx"
 abbrev-alias -c o=open
