@@ -173,3 +173,5 @@ abbrev-alias -c o=open
 #   zprof | less
 # fi
 
+eval "$(fasd --init auto)"
+
