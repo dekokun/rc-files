@@ -70,7 +70,6 @@ function ghq-src () {
 }
 zle -N ghq-src
 bindkey '^]' ghq-src
-
 # zshのbuiltin関数のman確認
 function manb() {
   man -P "less -p'^       $1 '" zshbuiltins
@@ -156,8 +155,6 @@ source "${HOME}/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
-zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
-zinit load zsh-users/zsh-completions # 補完
 abbrev-alias -g O="origin"
 abbrev-alias -g M='master'
 # abbrev-alias -ge C='$(git rev-parse --abbrev-ref HEAD)'
