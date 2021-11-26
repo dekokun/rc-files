@@ -144,7 +144,8 @@ export PATH="$HOME/.plenv/shims:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 source $HOME/.cargo/env
 
-source /usr/local/bin/aws_zsh_completer.sh
+# https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
+complete -C '/usr/local/bin/aws_completer' aws
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
