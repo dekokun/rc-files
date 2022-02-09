@@ -42,6 +42,7 @@ brew install nodenv
 brew install gh
 brew install git-delta
 brew install asdf
+brew install git-secrets
 
 brew cask install google-chrome
 brew cask install firefox
