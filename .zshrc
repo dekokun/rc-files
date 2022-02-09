@@ -187,3 +187,5 @@ abbrev-alias -c o=open
 eval "$(fasd --init auto)"
 
 local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
+
+. /usr/local/opt/asdf/asdf.sh
