@@ -39,6 +39,11 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
+# for URL paste
+autoload -U url-quote-magic bracketed-paste-magic
+zle -N self-insert url-quote-magic
+zle -N bracketed-paste bracketed-paste-magic
+
 # lazy load
 # source kubectl completion zsh is slow
 kubectl() {
