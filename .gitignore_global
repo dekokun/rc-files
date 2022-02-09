@@ -4,3 +4,4 @@ tags
 .idea/
 *.iml
 .vscode/
+.envrc
