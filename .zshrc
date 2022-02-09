@@ -167,11 +167,16 @@ abbrev-alias -g M='master'
 abbrev-alias -c g=git
 abbrev-alias -c gc="git commit -m'"
 abbrev-alias -c ga="git padd"
+abbrev-alias -c gs="git status"
+abbrev-alias -c gsw="git switch"
+abbrev-alias -c gb="git branch"
 abbrev-alias -ce gps='git push origin $(git rev-parse --abbrev-ref HEAD)'
-abbrev-alias -ce gpl='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -ce gpl='git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase'
 abbrev-alias -c gco="git checkout"
+abbrev-alias -c gcp="git cherry-pick"
 abbrev-alias -c k=kubectl
 abbrev-alias -c kx="kubectl ctx"
+abbrev-alias -c kn="kubectl ns"
 abbrev-alias -c o=open
 
 # zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
