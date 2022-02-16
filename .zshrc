@@ -177,6 +177,7 @@ abbrev-alias -c gcp="git cherry-pick"
 abbrev-alias -c k=kubectl
 abbrev-alias -c kx="kubectl ctx"
 abbrev-alias -c kn="kubectl ns"
+abbrev-alias -c krb="kubectl run busybox --restart=Never -it --image=busybox --rm /bin/sh"
 abbrev-alias -c o=open
 
 # zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
