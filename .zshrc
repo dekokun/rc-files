@@ -192,7 +192,7 @@ disable r
 
 eval "$(fasd --init auto)"
 
-local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
+local WORDCHARS='*?_[]~&;!#$%^(){}<>'
 
 . /usr/local/opt/asdf/asdf.sh
 
