@@ -166,6 +166,7 @@ abbrev-alias -g M='master'
 # abbrev-alias -ge C='$(git rev-parse --abbrev-ref HEAD)'
 abbrev-alias -c g=git
 abbrev-alias -c gc="git commit -m'"
+abbrev-alias -c e="code -a ."
 abbrev-alias -c ga="git padd"
 abbrev-alias -c gs="git status"
 abbrev-alias -c gsw="git switch"
