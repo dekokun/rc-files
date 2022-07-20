@@ -187,6 +187,9 @@ abbrev-alias -c n=notify
 #   zprof | less
 # fi
 
+# remove dangerous zsh alias
+disable r
+
 eval "$(fasd --init auto)"
 
 local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
