@@ -5,7 +5,7 @@
 #   bind ^T run-shell tmux-ghq
 #
 
-set -e
+set -eu
 fzfcmd="fzf-tmux -d${FZF_TMUX_HEIGHT:-40%} -e +s --reverse"
 
 tmux start-server
