@@ -180,6 +180,7 @@ abbrev-alias -c kx="kubectl ctx"
 abbrev-alias -c kn="kubectl ns"
 abbrev-alias -c krb="kubectl run busybox --restart=Never -it --image=busybox --rm /bin/sh"
 abbrev-alias -c o=open
+abbrev-alias -c n=notify
 
 # zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
 # if (which zprof > /dev/null) ;then
@@ -191,3 +192,13 @@ eval "$(fasd --init auto)"
 local WORDCHARS='*?_[]~=&;!#$%^(){}<>'
 
 . /usr/local/opt/asdf/asdf.sh
+
+_notify() {
+  # memo: soundlist: /System/Library/Sounds/
+  if [ $? -eq 0 ]; then
+    osascript -e 'display notification  "Process is success !" with title "Terminal" subtitle "Success" sound name "Hero"'
+  else
+    osascript -e 'display notification  "Process is failed..." with title "Terminal" subtitle "Failed..." sound name "Sosumi"'
+  fi
+}
+alias notify=_notify
