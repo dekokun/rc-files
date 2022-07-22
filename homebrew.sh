@@ -1,37 +1,28 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kurachishintarou/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install zsh
 brew install tmux
 brew install git
-brew install vim --with-python3 --with-lua
+brew install vim
 brew install gnu-sed
 brew install autojump
-brew install composer
 brew install curl
 brew install wget
-brew install git
 brew install graphviz
 brew install hub
 brew install jq
-brew install alfred
 brew install mysql
-brew install php55
-brew install caskroom/cask/brew-cask
 brew install reattach-to-user-namespace
 brew install htop
-# gem installした際にrehashしなくてすむようにする
-brew install rbenv-gem-rehash
 brew install ruby-build
 brew install nodebrew
-brew install composer
 brew install go
 brew install jq
-brew tap motemen/ghq
 brew install ghq
 brew install shellcheck
-brew tap greymd/tools
 brew install tmux-xpanes
 brew install ag
-brew install fzf
 brew install fasd
 brew install terminal-notifier
 brew install direnv
@@ -43,27 +34,27 @@ brew install gh
 brew install git-delta
 brew install asdf
 brew install git-secrets
+brew install asdf
+brew install awscli
+# ricty font install
+brew tap sanemat/font
+brew install ricty
+## (generate)
+cp -f $(brew --prefix)/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -vf
 
-brew cask install google-chrome
-brew cask install firefox
-brew cask install iterm2
-brew cask install dropbox
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install intellij-idea
-brew cask install karabiner
-brew cask install YoruFukurou
-brew cask install Dash
-brew cask install Evernote
-brew cask install alfred
-brew cask install hipchat
+# fzf
+brew install fzf
+$(brew --prefix)/opt/fzf/install --all
 
-brew cask install limechat
+brew install --cask google-chrome
+brew install --cask virtualbox
+brew install --cask vagrant
+brew install --cask karabiner-elements
+brew install --cask google-japanese-ime
+brew install --cask alacritty
+brew install --cask visual-studio-code
+brew install --cask docker
+brew install --cask google-cloud-sdk
 
-brew cask install google-japanese-ime
 
-brew cask alfred link
-brew cask install alacritty
-
-brew tap zkokaja/brewlet
-brew install --cask brewlet
