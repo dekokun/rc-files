@@ -3,7 +3,6 @@ if [ -f ~/.bashrc ] ; then
 fi
 export PATH="$HOME/.plenv/bin:$PATH"
 
-export PATH="$HOME/.cargo/bin:$PATH"
 # added by Anaconda2 5.3.1 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -36,3 +35,4 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+. "$HOME/.cargo/env"

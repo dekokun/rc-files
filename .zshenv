@@ -14,9 +14,12 @@ fi
 # RVM
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-export PATH=$HOME/.nodebrew/current/bin:/usr/local/sbin:/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin:~/rc/bin
+export PATH=$(brew --prefix)/bin:$HOME/.nodebrew/current/bin:/usr/local/sbin:/usr/local/bin:$PATH:~/bin:$HOME/Library/Haskell/bin:~/rc/bin
 export GOPATH=~
 export REPORTTIME=1
 # lessを便利に。参照： http://qiita.com/delphinus/items/b04752bb5b64e6cc4ea9 
 export LESS='-g -i -M -R -S -W -z-4 -x4'
-export EDITOR=vim
+export EDITOR=$(brew --prefix)/bin/vim
+. "$HOME/.cargo/env"
+
+export XDG_CONFIG_HOME=$HOME/.config

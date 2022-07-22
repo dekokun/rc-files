@@ -5,7 +5,8 @@ if [ $? -eq 1 -a -z "$TMUX" ]; then
 elif [ -z "$TMUX" ] ; then
     exec tmux attach
 else
-    echo "sessions should be nested with care."
+    # echo "sessions should be nested with care."
+    :
 fi
 
 # promptはstarshipに任せる
@@ -136,28 +137,24 @@ nodenv() {
 # direnv is not slow
 source <(direnv hook zsh)
 
-export XDG_DATA_HOME=/usr/local/share
-
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/dekokun/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/Users/dekokun/google-cloud-sdk/completion.zsh.inc'
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 export PATH="$HOME/.plenv/shims:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 source $HOME/.cargo/env
 
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
-complete -C '/usr/local/bin/aws_completer' aws
+autoload bashcompinit && bashcompinit
+complete -C '$(brew --prefix)/bin/aws_completer' aws
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-source "${HOME}/.zinit/bin/zinit.zsh"
+source $(brew --prefix)/opt/zinit/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
@@ -194,7 +191,7 @@ eval "$(fasd --init auto)"
 
 local WORDCHARS='*?_[]~&;!#$%^(){}<>'
 
-. /usr/local/opt/asdf/asdf.sh
+. $(brew --prefix)/opt/asdf/asdf.sh
 
 _notify() {
   # memo: soundlist: /System/Library/Sounds/
