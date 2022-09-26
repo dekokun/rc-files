@@ -154,7 +154,8 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-source $(brew --prefix)/opt/zinit/zinit.zsh
+source $HOME/.local/share/zinit/zinit.git/zinit.zsh
+
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
@@ -202,3 +203,13 @@ _notify() {
   fi
 }
 alias notify=_notify
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk

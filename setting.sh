@@ -40,7 +40,6 @@ anyenv install --init
 anyenv install plenv
 anyenv install rbenv
 anyenv install nodenv
-
 # alacritty
 mkdir -p ~/.config/alacritty/
 ln -s ~/rc/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -55,3 +54,9 @@ ln -s ~/rc/alacritty.yml ~/.config/alacritty/alacritty.yml
   tar zxvf "${KREW}.tar.gz" &&
   ./"${KREW}" install krew
 )
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# zinit
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"

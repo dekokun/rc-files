@@ -36,6 +36,9 @@ brew install asdf
 brew install git-secrets
 brew install asdf
 brew install awscli
+brew install helm
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 # ricty font install
 brew tap sanemat/font
 brew install ricty
@@ -56,5 +59,5 @@ brew install --cask alacritty
 brew install --cask visual-studio-code
 brew install --cask docker
 brew install --cask google-cloud-sdk
-
-
+brew install --cask alfred
+brew install --cask slack
