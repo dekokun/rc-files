@@ -1,3 +1,5 @@
+# rosetta
+sudo softwareupdate --install-rosetta
 # homebrew
 `dirname $0`/homebrew.sh
 
