@@ -39,6 +39,9 @@ brew install awscli
 brew install helm
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
+brew install oci-cli
+# k8s
+brew install stern
 brew install kubeconform
 # ricty font install
 brew tap sanemat/font
