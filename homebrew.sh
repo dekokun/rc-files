@@ -66,3 +66,4 @@ brew install --cask google-cloud-sdk
 brew install --cask alfred
 brew install --cask slack
 brew install --cask deepl
+brew install --cask discord
