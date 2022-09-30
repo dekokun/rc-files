@@ -45,6 +45,7 @@ anyenv install nodenv
 # alacritty
 mkdir -p ~/.config/alacritty/
 ln -s ~/rc/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/rc/starship.toml ~/.config/starship.toml
 
 # 
 (
