@@ -47,12 +47,12 @@ brew install kubeconform
 brew tap sanemat/font
 brew install ricty
 ## (generate)
-cp -f $(brew --prefix)/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+cp -f "$(brew --prefix)/opt/ricty/share/fonts/Ricty*.ttf" ~/Library/Fonts/
 fc-cache -vf
 
 # fzf
 brew install fzf
-$(brew --prefix)/opt/fzf/install --all
+"$(brew --prefix)/opt/fzf/install" --all
 
 brew install --cask google-chrome
 brew install --cask virtualbox
