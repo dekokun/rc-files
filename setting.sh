@@ -60,6 +60,7 @@ ln -s ~/rc/starship.toml ~/.config/starship.toml
 
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install cargo-snippet --features="binaries"
 
 # zinit
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
