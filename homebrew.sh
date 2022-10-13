@@ -23,7 +23,6 @@ brew install ghq
 brew install shellcheck
 brew install tmux-xpanes
 brew install ag
-brew install fasd
 brew install terminal-notifier
 brew install direnv
 brew install itchyny/tap/gojq
@@ -40,6 +39,7 @@ brew install helm
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 brew install oci-cli
+brew install zoxide
 # k8s
 brew install stern
 brew install kubeconform

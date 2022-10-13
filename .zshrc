@@ -27,7 +27,6 @@ alias l='ls -a'
 alias la='ls -a'
 alias ll='ls -lah'
 alias vi='vim'
-alias j='fasd_cd -d'
 alias jq='gojq'
 # sshのlogging
 alias ssh=lssh
@@ -54,17 +53,6 @@ kubectl() {
 }
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --exact'
-autojump-fzf() {
-  if [[ -z "$*" ]]; then
-    cd "$(fasd_cd -d | fzf -1 -0 --no-sort --tac +m | sed 's/^[0-9,.]* *//')"
-  else
-    cd "$(fasd_cd -d | fzf --query="$*" -1 -0 --no-sort --tac +m | sed 's/^[0-9,.]* *//')"
-  fi
-  zle accept-line
-}
-zle -N autojump-fzf
-bindkey '^j' autojump-fzf
-
 # ghqから絞込
 function ghq-src () {
   local selected_dir=$(ghq list -p | fzf +m)
@@ -180,6 +168,7 @@ abbrev-alias -c krb="kubectl run busybox --restart=Never -it --image=busybox --r
 abbrev-alias -c o=open
 abbrev-alias -c n=notify
 abbrev-alias -c hub=gh
+abbrev-alias -c j=zi
 
 # zprofを使う際にコメントを戻す。その際はzshenvの変更も必要
 # if (which zprof > /dev/null) ;then
@@ -189,7 +178,7 @@ abbrev-alias -c hub=gh
 # remove dangerous zsh alias
 disable r
 
-eval "$(fasd --init auto)"
+eval "$(zoxide init zsh)"
 
 local WORDCHARS='*?_[]~&;!#$%^(){}<>'
 
