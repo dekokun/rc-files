@@ -46,6 +46,10 @@ brew install kubeconform
 # ricty font install
 brew tap sanemat/font
 brew install ricty
+# cert
+brew tap genkiroid/homebrew-cert
+brew install cert
+
 ## (generate)
 cp -f "$(brew --prefix)/opt/ricty/share/fonts/Ricty*.ttf" ~/Library/Fonts/
 fc-cache -vf
