@@ -23,3 +23,5 @@ export EDITOR=$(brew --prefix)/bin/vim
 . "$HOME/.cargo/env"
 
 export XDG_CONFIG_HOME=$HOME/.config
+
+export LANG=ja_JP.UTF-8
