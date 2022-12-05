@@ -25,7 +25,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias l='ls -a'
 alias la='ls -a'
-alias ll='ls -lah'
+alias ll='ls -lahF'
 alias vi='vim'
 alias jq='gojq'
 # sshのlogging
