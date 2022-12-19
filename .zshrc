@@ -158,6 +158,7 @@ abbrev-alias -c gs="git status"
 abbrev-alias -c gsw="git switch"
 abbrev-alias -c gb="git branch"
 abbrev-alias -ce gps='git push origin $(git rev-parse --abbrev-ref HEAD)'
+abbrev-alias -ce gpsf='git push origin $(git rev-parse --abbrev-ref HEAD) --force-with-lease --force-if-includes'
 abbrev-alias -ce gpl='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 abbrev-alias -c gco="git checkout"
 abbrev-alias -c gcp="git cherry-pick"
