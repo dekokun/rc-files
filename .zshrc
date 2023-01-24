@@ -183,7 +183,7 @@ eval "$(zoxide init zsh)"
 
 local WORDCHARS='*?_[]~&;!#$%^(){}<>'
 
-. $(brew --prefix)/opt/asdf/asdf.sh
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
 _notify() {
   # memo: soundlist: /System/Library/Sounds/
