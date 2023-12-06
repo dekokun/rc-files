@@ -1,5 +1,5 @@
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kurachishintarou/.zprofile
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install zsh
 brew install tmux
@@ -71,3 +71,4 @@ brew install --cask alfred
 brew install --cask slack
 brew install --cask deepl
 brew install --cask discord
+brew install --cask 1password
