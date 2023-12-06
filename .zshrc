@@ -136,7 +136,6 @@ source $HOME/.cargo/env
 # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
 autoload bashcompinit && bashcompinit
 complete -C '$(brew --prefix)/bin/aws_completer' aws
-fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
