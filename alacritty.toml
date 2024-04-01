@@ -1,0 +1,127 @@
+# dynamic_title = true
+# enable_experimental_conpty_backend = false
+live_config_reload = true
+# "window.opacity" = 1.0
+working_directory = "None"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x666666"
+blue = "0x7aa6da"
+cyan = "0x54ced6"
+green = "0x9ec400"
+magenta = "0xb77ee0"
+red = "0xff3334"
+white = "0xffffff"
+yellow = "0xe7c547"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x7aa6da"
+cyan = "0x70c0ba"
+green = "0xb9ca4a"
+magenta = "0xc397d8"
+red = "0xd54e53"
+white = "0xeaeaea"
+yellow = "0xe6c547"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xeaeaea"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+# ref_test = false
+render_timer = false
+
+[font]
+# AppleFontSmoothing = true
+size = 22.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = '\'
+key = "Backslash"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.hints]
+# modifiers = "None"
+
+# [mouse.hints.launcher]
+# program = "open"
+
+# [mouse.triple_click]
+# threshold = 300
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+# [visual_bell]
+# animation = "EaseOutExpo"
+# color = "0xffffff"
+# duration = 0
+
+[window]
+decorations = "full"
+dynamic_padding = false
+option_as_alt = "Both"
+startup_mode = "Maximized"
+title = "Rust !!!!"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
