@@ -36,3 +36,5 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"

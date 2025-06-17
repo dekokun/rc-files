@@ -19,3 +19,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+. "$HOME/.local/bin/env"
