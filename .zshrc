@@ -70,6 +70,17 @@ function manb() {
   man -P "less -p'^       $1 '" zshbuiltins
 }
 
+# Enhanced repo function (includes subdirectories)
+repo () {
+    # $HOME/src/github.com/ 下の全ディレクトリを2段階で検索
+    local base_dir="$HOME/src/github.com"
+    local selected_path=$(find "$base_dir" -maxdepth 2 -type d -not -path "$base_dir" | fzf -q "$*" --height 40% --border --prompt "Repository > ")
+    
+    if [ -n "$selected_path" ]; then
+        cd "$selected_path"
+    fi
+}
+
 # history設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -162,6 +173,7 @@ abbrev-alias -g M='master'
 abbrev-alias -c g=git
 abbrev-alias -c claude="claude --dangerously-skip-permissions"
 abbrev-alias -c gc='git commit -m"'
+abbrev-alias -c j='repo'
 abbrev-alias -c e="cursor ."
 abbrev-alias -c er="cursor -r ."
 abbrev-alias -c ej='cursor -a $(ghq list -p | fzf -q ""$@"")'
